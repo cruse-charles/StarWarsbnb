@@ -8,30 +8,6 @@ import './Navigation.css';
 function Navigation(){
   const sessionUser = useSelector(state => state.session.user);
 
-  // let sessionLinks;
-  // if (sessionUser) {
-  //   sessionLinks = (
-  //     <ProfileButton user={sessionUser} />
-  //   );
-  // } else {
-  //   sessionLinks = (
-  //     <>
-  //       <LoginFormModal />
-  //       <NavLink to="/signup">Sign Up</NavLink>
-  //     </>
-  //   );
-  // }
-  // ORIGINAL AUTH ME CLONE
-
-
-  // let sessionLinks = (
-  //   <>
-  //     <ProfileButton user={sessionUser} />
-  //     <LoginFormModal />
-  //     <NavLink to="/signup">Sign Up</NavLink>
-  //   </>
-  // );
-
   return (
     <div className='navigation-bar'>
       <div className='airbnb-logo'>
@@ -42,11 +18,8 @@ function Navigation(){
       </div>
       <div>
         {/* <img src={require('../../../assets/account-icon.png')}/> */}
-        {/* HOW DO I GET AN IMAGE IN HERE?
-        {/* <i className="fa-solid fa-user-circle" /> */}
+        {/* Above is the image syntax needed */}
         <ProfileButton />
-        {/* <NavLink exact to="/">Home</NavLink> */}
-        {/* {sessionLinks} */}
       </div>
     </div>
   );

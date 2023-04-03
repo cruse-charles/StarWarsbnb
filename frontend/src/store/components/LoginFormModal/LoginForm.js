@@ -35,23 +35,18 @@ function LoginForm() {
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      {/* <label> */}
         <input className='user-auth-button'
           type="text"
           placeholder={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
-      {/* </label> */}
-      {/* <br></br> */}
-      {/* <label> */}
         <input className='user-auth-button'
           type="password"
           placeholder={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      {/* </label> */}
       <br></br>
       <button className='user-auth-button' id='continue-button' type="submit">Continue</button>
     </form>
