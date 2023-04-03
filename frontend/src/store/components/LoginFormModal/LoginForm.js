@@ -48,7 +48,10 @@ function LoginForm() {
 
   return (
     <>
-    <h4>Log in</h4>
+    <div>
+      <button type='button' class='close' data-dismiss='modal-content'>x</button>
+      <h4>Log in</h4>
+    </div>
     <h2>Welcome to Starwarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>

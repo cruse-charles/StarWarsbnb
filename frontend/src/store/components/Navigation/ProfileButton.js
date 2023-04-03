@@ -10,29 +10,28 @@ function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
   };
   
-  useEffect(() => {
-    if (!showMenu) return;
+//   useEffect(() => {
+//     if (!showMenu) return;
 
-    const closeMenu = (e) => {
-// debugger
-      if(e.target.innerText === 'Log In') {
-        return
-      }else if(e.target.innerText === 'Sign Up') {
-        return
-      }else{
-        setShowMenu(false);
-      }
-    };
+//     const closeMenu = (e) => {
+// // debugger
+//       if(e.target.innerText === 'Log In') {
+//         return
+//       }else if(e.target.innerText === 'Sign Up') {
+//         return
+//       }else{
+//         setShowMenu(false);
+//       }
+//     };
 
-    // document.addEventListener('click', closeMenu);
+//     // document.addEventListener('click', closeMenu);
   
-    return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu]);
+//     return () => document.removeEventListener("click", closeMenu);
+//   }, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -50,7 +49,7 @@ function ProfileButton() {
 
   return (
     <>
-      <button className='account-button' onClick={openMenu}>
+      <button className='account-button' onClick={toggleMenu}>
         <i id='hamburger' className="fa-sharp fa-solid fa-bars" />
         <i id='account-icon' className="fa-solid fa-user" />
       </button>

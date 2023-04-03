@@ -11,7 +11,8 @@ function Navigation(){
   return (
     <div className='navigation-bar'>
       <div className='airbnb-logo'>
-        {/* <img src={require('../../../assets/airbnb-logo.png')}/> */}
+        {/* <img src={require('../../../../src/assets/airbnb-logo.png')}/> */}
+        {/* CANNOT GET IMAGES IMPORTED INTO HERE */}
         Airbnb Logo Here
       </div>
       <div className='searchbar'>
@@ -19,7 +20,6 @@ function Navigation(){
       </div>
       <div>
         {/* <img src={require('../../../assets/account-icon.png')}/> */}
-        {/* <img src={require('../../../assets/account-icon2.png')} alt='logo'/> */}
         {/* Above is the image syntax needed */}
         <ProfileButton />
       </div>
