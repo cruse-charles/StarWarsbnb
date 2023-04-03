@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
-import * as sessionActions from '../../session';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import './LoginForm.css';
+import React, { useState } from "react";
+import * as sessionActions from "../../../store/session";
+import { useDispatch } from "react-redux";
+import "./LoginForm.css";
 
-function LoginFormPage() {
+function LoginForm() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
-  const [credential, setCredential] = useState('');
-  const [password, setPassword] = useState('');
+  const [credential, setCredential] = useState(" Username or Email");
+  const [password, setPassword] = useState(" Password");
   const [errors, setErrors] = useState([]);
-
-  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,34 +25,33 @@ function LoginFormPage() {
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
-  }
+  };
 
   return (
+    <>
+    <h4>Log in or sign up</h4>
+    <h2>Welcome to Starwarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
-        <input
+        <input className='user-auth-button'
           type="text"
-          value={credential}
+          placeholder={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Password
-        <input
+        <input className='user-auth-button'
           type="password"
-          value={password}
+          placeholder={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Log In</button>
+      <br></br>
+      <button className='user-auth-button' id='continue-button' type="submit">Continue</button>
     </form>
+    </>
   );
 }
 
-export default LoginFormPage;
+export default LoginForm;

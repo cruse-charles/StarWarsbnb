@@ -1,0 +1,44 @@
+.navigation-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
+    height: 70px;
+    height: 200px;
+    align-items: center;
+}
+
+
+
+.profile-dropdown {
+    font-size: 20px;
+}
+
+.account-button {
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 21px;
+    height: 42px;
+    /* width: 46px; */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: box-shadow 0.2s ease;
+}
+
+.account-button:hover {
+    box-shadow: 0 2px 4px gray;
+}
+
+#hamburger{
+    height: 30px;
+    width: 30px;
+}
+
+#account-icon {
+    height: 30px;
+    width: 30px;
+}
+
+/* cant get these two icons to change size */

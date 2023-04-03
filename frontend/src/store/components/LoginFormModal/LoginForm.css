@@ -1,0 +1,56 @@
+#modal-content {
+    height: 640px;
+    width: 560px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    animation: popin .6s ease-in-out;
+    /* Airbnb is invisible for a split second when modal pops in */
+}
+
+@keyframes popin {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0)
+    }
+}
+
+h4 {
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    
+}
+
+h2 {
+    width: 80%;
+    text-align: left;
+}
+
+#continue-button {
+    cursor: pointer;
+    background-color: rgb(229, 30, 85);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.user-auth-button {
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}

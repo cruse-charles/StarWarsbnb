@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import {NavLink} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../../store/session';
+import LoginFormModal from "../LoginFormModal";
 
-function ProfileButton({ user }) {
+function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   
@@ -14,8 +16,12 @@ function ProfileButton({ user }) {
   useEffect(() => {
     if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
+    const closeMenu = (e) => {
+      if(e.target.innerText === 'Log In') {
+        return
+      }else{
+        setShowMenu(false);
+      }
     };
 
     document.addEventListener('click', closeMenu);
@@ -28,15 +34,23 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
+  let sessionLinks = (
+    <>
+      <LoginFormModal />
+      <NavLink to="/signup">Sign Up</NavLink>
+    </>
+  );
+  
+
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
+      <button className='account-button' onClick={openMenu}>
+        <i id='hamburger' className="fa-sharp fa-solid fa-bars" />
+        <i id='account-icon' className="fa-solid fa-user" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <li>{sessionLinks}</li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>
