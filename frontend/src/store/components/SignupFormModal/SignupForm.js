@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../session";
+import './SignupForm.css'
 
 function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState("Email");
+  const [username, setUsername] = useState("Username");
+  const [password, setPassword] = useState("Password");
+  const [confirmPassword, setConfirmPassword] = useState("Confirm Password");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
@@ -36,48 +37,40 @@ function SignupFormPage() {
   };
 
   return (
+    <>
+    <h4>Sign up</h4>
+    <h2>Welcome to StarWarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <label>
-        Email
-        <input
+        <input className="user-auth-entry"
           type="text"
-          value={email}
+          placeholder={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Username
-        <input
+        <input className="user-auth-entry"
           type="text"
-          value={username}
+          placeholder={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Password
-        <input
+        <input className="user-auth-entry"
           type="password"
-          value={password}
+          placeholder={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Confirm Password
-        <input
+        <input className="user-auth-entry"
           type="password"
-          value={confirmPassword}
+          placeholder={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Sign Up</button>
+      <button className='user-auth-button' type="submit">Continue</button>
     </form>
+    </>
   );
 }
 

@@ -40,16 +40,18 @@ h2 {
     text-align: left;
 }
 
-#continue-button {
+.user-auth-button, .demo-button {
     cursor: pointer;
     background-color: rgb(229, 30, 85);
     color: white;
     border: none;
     border-radius: 5px;
     font-family: inherit;
+
+    
 }
 
-.user-auth-button {
+.user-auth-button, .user-auth-entry, .demo-button{
     height: 50px;
     border: 1px solid gray;
     border-radius: 5px;

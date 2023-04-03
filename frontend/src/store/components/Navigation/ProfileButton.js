@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {NavLink} from 'react-router-dom'
+// import {NavLink} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../../store/session';
 import LoginFormModal from "../LoginFormModal";
+// import SignupFormPage from "../SignupFormModal/SignupForm";
+import SignupFormModal from "../SignupFormModal";
 
 function ProfileButton() {
   const dispatch = useDispatch();
@@ -17,7 +19,10 @@ function ProfileButton() {
     if (!showMenu) return;
 
     const closeMenu = (e) => {
+// debugger
       if(e.target.innerText === 'Log In') {
+        return
+      }else if(e.target.innerText === 'Sign Up') {
         return
       }else{
         setShowMenu(false);
@@ -36,8 +41,9 @@ function ProfileButton() {
 
   let sessionLinks = (
     <>
-      <LoginFormModal />
-      <NavLink to="/signup">Sign Up</NavLink>
+      <div><LoginFormModal /></div>
+      {/* <NavLink to="/signup">Sign Up</NavLink> */}
+      <div><SignupFormModal /></div>
     </>
   );
   
@@ -49,12 +55,12 @@ function ProfileButton() {
         <i id='account-icon' className="fa-solid fa-user" />
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{sessionLinks}</li>
-          <li>
+        <div className="profile-dropdown">
+          <div>{sessionLinks}</div>
+          <div>
             <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
+          </div>
+        </div>
       )}
     </>
   );
