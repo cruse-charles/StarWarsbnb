@@ -7,13 +7,12 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    animation: popin .6s ease-in-out;
-    /* Airbnb is invisible for a split second when modal pops in */
+    animation: popin .6s ease-in;
 }
 
 @keyframes popin {
     0%{
-        transform: translateY(100%);
+        transform: translateY(80%);
     }
     100%{
         transform: translateY(0)
