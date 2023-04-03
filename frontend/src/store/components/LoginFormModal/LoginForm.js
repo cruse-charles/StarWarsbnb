@@ -5,8 +5,8 @@ import "./LoginForm.css";
 
 function LoginForm() {
   const dispatch = useDispatch();
-  const [credential, setCredential] = useState("");
-  const [password, setPassword] = useState("");
+  const [credential, setCredential] = useState(" Username or Email");
+  const [password, setPassword] = useState(" Password");
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
@@ -28,30 +28,34 @@ function LoginForm() {
   };
 
   return (
+    <>
+    <h4>Log in or sign up</h4>
+    <h2>Welcome to Starwarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
-        <input
+      {/* <label> */}
+        <input className='user-auth-button'
           type="text"
-          value={credential}
+          placeholder={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Password
-        <input
+      {/* </label> */}
+      {/* <br></br> */}
+      {/* <label> */}
+        <input className='user-auth-button'
           type="password"
-          value={password}
+          placeholder={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Log In</button>
+      {/* </label> */}
+      <br></br>
+      <button className='user-auth-button' id='continue-button' type="submit">Continue</button>
     </form>
+    </>
   );
 }
 

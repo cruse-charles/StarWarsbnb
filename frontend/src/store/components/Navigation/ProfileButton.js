@@ -62,11 +62,30 @@ function ProfileButton() {
     setShowMenu(true);
   };
   
+  // useEffect(() => {
+  //   if (!showMenu) return;
+
+  //   const closeMenu = () => {
+  //     setShowMenu(false);
+  //   };
+
+  //   document.addEventListener('click', closeMenu);
+  
+  //   return () => document.removeEventListener("click", closeMenu);
+  // }, [showMenu]);
+  // originally from auth-me
+  // IF COMMENTED OUT, I CAN  NOW SEE MODAL, BUT MENU WONT CLOSE
+
   useEffect(() => {
     if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
+    const closeMenu = (e) => {
+      //So we can do an event.target for the login button itself and if that is the target, we do nothing
+      if(e.target.innerText === 'Log In') {
+        return
+      }else{
+        setShowMenu(false);
+      }
     };
 
     document.addEventListener('click', closeMenu);
@@ -89,8 +108,9 @@ function ProfileButton() {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
+      <button className='account-button' onClick={openMenu}>
+        <i id='hamburger' className="fa-sharp fa-solid fa-bars" />
+        <i id='account-icon' className="fa-solid fa-user" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

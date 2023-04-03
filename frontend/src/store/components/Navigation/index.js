@@ -41,11 +41,11 @@ function Navigation(){
         Search Bar Here
       </div>
       <div>
-        {/* <img src='../../../../assets/account-icon.png' alt='account-icon'/> */}
-        {/* HOW DO I GET AN IMAGE IN HERE? */}
+        {/* <img src={require('../../../assets/account-icon.png')}/> */}
+        {/* HOW DO I GET AN IMAGE IN HERE?
         {/* <i className="fa-solid fa-user-circle" /> */}
         <ProfileButton />
-        <NavLink exact to="/">Home</NavLink>
+        {/* <NavLink exact to="/">Home</NavLink> */}
         {/* {sessionLinks} */}
       </div>
     </div>
