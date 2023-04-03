@@ -1,0 +1,12 @@
+.navigation-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
+    height: 70px;
+    height: 200px;
+    align-items: center;
+}
+
+
+
