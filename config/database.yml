@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: starwarsbnb_production
-  username: starwarsbnb
-  password: <%= ENV["STARWARSBNB_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
