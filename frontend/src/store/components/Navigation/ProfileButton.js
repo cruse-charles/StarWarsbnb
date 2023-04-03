@@ -24,7 +24,7 @@ function ProfileButton() {
       }
     };
 
-    document.addEventListener('click', closeMenu);
+    // document.addEventListener('click', closeMenu);
   
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
