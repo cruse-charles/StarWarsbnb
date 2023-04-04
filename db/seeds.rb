@@ -30,6 +30,20 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
+
+    puts "Creating Listings..."
+    #Create a listing
+    Listing.create!(
+      title: 'Example Listing',
+      lister_id: 1,
+      description: 'Description Example',
+      address: '123 Example Address',
+      city: 'Example City',
+      country: 'Example Country',
+      latitude: '10.000000',
+      longitude: '10.000000',
+      price: '100'
+    )
   
     puts "Done!"
   end

@@ -22,3 +22,15 @@
     position: absolute;
     background-color:white;
 }
+
+#exit-button {
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 100%;
+    /* background-color: lightgray; */
+
+}
+
+#exit-button:hover {
+    background-color: lightgray;
+}

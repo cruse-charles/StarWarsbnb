@@ -1,12 +1,32 @@
-const SET_LISTINGS = 'listings/setListings'
+export const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS'
 
-const setListings = (listings) => {
+const receiveListings = (listings) => {
     return {
-        type: SET_LISTINGS,
+        type: RECEIVE_LISTINGS,
         listings
     }
 }
 
-const fetchListings = () => async (dispatch) => {
-    const response = await fetch('/api/listings')
+export const getListings = state => {
+    return state.listings ? Object.values(state.listings) : []
 }
+
+export const fetchListings = () => async (dispatch) => {
+    const response = await fetch('/api/listings')
+    const data = await response.json()
+    dispatch(receiveListings(data))
+}
+
+
+
+const listingsReducer = (state = {}, action) => {
+    switch(action.type) {
+        case RECEIVE_LISTINGS:
+            return {...state, ...action.listings}
+        default:
+            return state
+    }
+}
+
+
+export default listingsReducer
