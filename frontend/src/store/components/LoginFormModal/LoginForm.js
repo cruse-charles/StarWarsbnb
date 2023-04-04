@@ -3,7 +3,7 @@ import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 
-function LoginForm() {
+function LoginForm({onSubmit}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState(" Username or Email");
   const [password, setPassword] = useState(" Password");
@@ -13,6 +13,7 @@ function LoginForm() {
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password }))
+      .then(onSubmit)
       .catch(async (res) => {
         let data;
         try {
@@ -32,6 +33,7 @@ function LoginForm() {
     setErrors([]);
     return dispatch(sessionActions.login({credential: 'demo@user.io', password: 'password'}))
     //I MUST PASS THIS IN WITH CREDIENTIAL: AND PASSWORD: BECAUSE SESSION.ACTIONS WANTS AN OBJECT, WHICH SHOULD ALWAYS BE KEY:VALUE PAIRS, CORRECT?
+    .then(onSubmit)
     .catch(async (res) => {
       let data;
       try {
@@ -44,6 +46,7 @@ function LoginForm() {
       else if (data) setErrors([data]);
       else setErrors([res.statusText]);
     });
+
   }
 
   return (

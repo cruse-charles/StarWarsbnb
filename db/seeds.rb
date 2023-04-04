@@ -9,6 +9,7 @@ ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
+    Listing.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -43,6 +44,18 @@ ApplicationRecord.transaction do
       latitude: '10.000000',
       longitude: '10.000000',
       price: '100'
+    )
+
+    Listing.create!(
+      title: 'Example2 Listing',
+      lister_id: 2,
+      description: 'Description2 Example',
+      address: '456 Example Address',
+      city: 'Example2 City',
+      country: 'Example2 Country',
+      latitude: '20.000000',
+      longitude: '20.000000',
+      price: '200'
     )
   
     puts "Done!"

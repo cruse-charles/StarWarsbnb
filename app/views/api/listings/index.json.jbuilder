@@ -1,7 +1,7 @@
-json.listings do
+# json.listings do
     @listings.each do |listing|
-        json.extract! listing, :id, :title, :address, :city, :country, :price
+        json.set! listing.id do 
+            json.extract! listing, :id, :title, :description, :address, :city, :country, :price
+        end
     end
-end
-
-# do I need a .set! here at all?
+# end

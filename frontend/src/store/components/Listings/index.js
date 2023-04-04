@@ -2,6 +2,8 @@ import TotalPriceButton from "./TotalPriceButton"
 import { fetchListings, getListings } from "../../listings"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
+import ListingIndexItem from "./ListingIndexItem"
+import "./Listings.css"
 
 function Listings() {
 
@@ -10,17 +12,18 @@ function Listings() {
     
     useEffect(() => {
         dispatch(fetchListings())
-    }, [])
+    }, [dispatch])
 
 
     return (
         <>
             <TotalPriceButton />
             <h1>Listings Section</h1>
-            {listings.map((listing) => {
-                return [listing.address, listing.title, listing.description, listing.city, listing.country]
-            })
-            }
+            <ul>
+                {listings.map((listing) => {
+                    return <ListingIndexItem listing={listing} key={listing.id} />
+                })}
+            </ul>
         </>
     )
 }
