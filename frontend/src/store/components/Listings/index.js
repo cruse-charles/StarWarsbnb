@@ -1,4 +1,4 @@
-import TotalPriceButton from "./TotalPriceButton"
+// import TotalPriceButton from "./TotalPriceButton"
 import { fetchListings, getListings } from "../../listings"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
@@ -17,13 +17,13 @@ function Listings() {
 
     return (
         <>
-            <TotalPriceButton />
+            {/* <TotalPriceButton /> */}
             <h1>Listings Section</h1>
-            <ul>
+            <div id='listings-grid'>
                 {listings.map((listing) => {
                     return <ListingIndexItem listing={listing} key={listing.id} />
                 })}
-            </ul>
+            </div>
         </>
     )
 }

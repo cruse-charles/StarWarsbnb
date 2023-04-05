@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
+import { menuContext } from "../Navigation/index";
+import { useContext } from "react";
 
 function LoginForm({onSubmit}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState(" Username or Email");
   const [password, setPassword] = useState(" Password");
   const [errors, setErrors] = useState([]);
+  const {menuState, setMenuState} = useContext(menuContext) 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password }))
-      .then(onSubmit)
+    .then(() => onSubmit)
+    .then(() => {setMenuState(false)})
       .catch(async (res) => {
         let data;
         try {
@@ -34,6 +38,7 @@ function LoginForm({onSubmit}) {
     return dispatch(sessionActions.login({credential: 'demo@user.io', password: 'password'}))
     //I MUST PASS THIS IN WITH CREDIENTIAL: AND PASSWORD: BECAUSE SESSION.ACTIONS WANTS AN OBJECT, WHICH SHOULD ALWAYS BE KEY:VALUE PAIRS, CORRECT?
     .then(onSubmit)
+    .then(() => {setMenuState(false)})
     .catch(async (res) => {
       let data;
       try {

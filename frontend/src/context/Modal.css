@@ -24,10 +24,16 @@
 }
 
 #exit-button {
+    position:relative;
+    left: 5px;
+    top: 5px;
     cursor: pointer;
     font-size: 40px;
     border-radius: 100%;
+    height: 30px;
+    width: 30px;
     /* background-color: lightgray; */
+    align-self:self-start;
 
 }
 

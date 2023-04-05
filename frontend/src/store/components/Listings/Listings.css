@@ -1,3 +1,53 @@
+#listings-grid{
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    /* padding: 30px; */
+    padding: 15px;
+    padding-top: 15px;
+    column-gap: 22px;
+    row-gap: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+}
+
 #listing-card {
     border: 2px solid black;
+    height: 360px;
+    text-align: left;
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+#listing-city-country {
+    font-weight: bold;
+}
+
+#listing-price {
+    font-weight: bold;
+}
+
+#listing-profile-photo {
+    height: 72%;
+    width: 100%;
+
+}
+
+#listing-price-line {
+    position: relative;
+    top: 35px;
+}
+
+
+@media (min-width: 740px) {
+
+    #listings-grid{
+        padding: 30px;
+        padding-top: 15px
+    }
+
 }

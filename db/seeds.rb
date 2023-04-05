@@ -57,6 +57,30 @@ ApplicationRecord.transaction do
       longitude: '20.000000',
       price: '200'
     )
+
+    Listing.create!(
+      title: 'Example3 Listing',
+      lister_id: 3,
+      description: 'Description3 Example',
+      address: '789 Example Address',
+      city: 'Example3 City',
+      country: 'Example3 Country',
+      latitude: '30.000000',
+      longitude: '30.000000',
+      price: '300'
+    )
+
+    Listing.create!(
+      title: 'Example4 Listing',
+      lister_id: 4,
+      description: 'Description4 Example',
+      address: '000 Example Address',
+      city: 'Example4 City',
+      country: 'Example4 Country',
+      latitude: '40.000000',
+      longitude: '40.000000',
+      price: '400'
+    )
   
     puts "Done!"
   end

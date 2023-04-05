@@ -6,6 +6,8 @@ import Listings from "./store/components/Listings"
 import Carousel from "./store/components/Carousel";
 
 function App() {
+  
+
   return (
     <>
       <Navigation />
