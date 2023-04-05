@@ -56,11 +56,7 @@ function LoginForm({onSubmit}) {
 
   return (
     <>
-    {/* <div> */}
-      {/* <button type='button' class='close' data-dismiss='modal' data-target='#modal'>x</button> */}
-      {/* <button type='button'>&times;</button> */}
       <h4>Log in</h4>
-    {/* </div> */}
     <h2>Welcome to Starwarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>

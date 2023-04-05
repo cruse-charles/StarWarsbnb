@@ -22,7 +22,11 @@ class User < ApplicationRecord
     class_name: :Listing,
     dependent: :destroy
 
-
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :reviewer_id,
+    class_name: :Review,
+    dependent: :destroy
 
 
 

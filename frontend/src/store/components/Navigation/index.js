@@ -3,6 +3,7 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import airbnbLogo from '../../../../src/assets/airbnb-logo.png'
 import { createContext, useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const menuContext = createContext()
 
@@ -20,14 +21,14 @@ function Navigation(){
     <MenuContextProvider>
     <div className='navigation-bar'>
       <div className='airbnb-logo'>
+      <Link to={'/'}>
         <img id='airbnb-logo' src={airbnbLogo} alt='logo'/>
+      </Link>
       </div>
       <div className='searchbar'>
         Search Bar Here
       </div>
       <div>
-        {/* <img src={require('../../../assets/account-icon.png')}/> */}
-        {/* Above is the image syntax needed */}
         <ProfileButton />
       </div>
     </div>

@@ -3,8 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     border-bottom: 1px solid lightgray;
-    height: 70px;
-    height: 200px;
+    height: 100px;
     align-items: center;
 }
 
@@ -12,9 +11,11 @@
 
 .profile-dropdown {
     font-size: 20px;
+    /* z-index: 1; */
 }
 
 .account-button {
+    /* position: absolute; */
     border: 1px solid lightgray;
     background-color: white;
     border-radius: 21px;

@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf"
 
 export const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS'
+export const RECEIVE_LISTING = 'listings/RECEIVE_LISTING'
 
 const receiveListings = (listings) => {
     return {
@@ -9,27 +10,50 @@ const receiveListings = (listings) => {
     }
 }
 
+const receiveListing = (payload) => ({
+    type: RECEIVE_LISTING,
+    listing: payload
+})
+
+
+
+
+
 export const getListings = state => {
-// debugger
     return state.listings ? Object.values(state.listings) : []
-// debugger
 }
 
+export const getListing = (listingId) => state => {
+    return state.listings?.[listingId] ? state.listings[listingId] : null
+}
+
+
+
+
+
 export const fetchListings = () => async (dispatch) => {
-// debugger
     const response = await csrfFetch('/api/listings')
     const data = await response.json()
     dispatch(receiveListings(data))
-// debugger
 }
+
+export const fetchListing = (listingId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/listings/${listingId}`)
+    const data = await response.json()
+// debugger
+    dispatch(receiveListing(data.listing))
+}
+//tf is this being nested for
+
 
 
 
 const listingsReducer = (state = {}, action) => {
-// debugger
     switch(action.type) {
         case RECEIVE_LISTINGS:
             return {...state, ...action.listings}
+        case RECEIVE_LISTING:
+            return {...state, [action.listing.id]: action.listing}
         default:
             return state
     }

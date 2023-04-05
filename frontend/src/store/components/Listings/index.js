@@ -2,10 +2,12 @@
 import { fetchListings, getListings } from "../../listings"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
+import Navigation from "../Navigation";
+import Carousel from "../Carousel";
 import ListingIndexItem from "./ListingIndexItem"
 import "./Listings.css"
 
-function Listings() {
+function ListingsIndex() {
 
     const dispatch = useDispatch();
     const listings = useSelector(getListings)
@@ -17,8 +19,8 @@ function Listings() {
 
     return (
         <>
-            {/* <TotalPriceButton /> */}
-            <h1>Listings Section</h1>
+            <Navigation />
+            <Carousel />
             <div id='listings-grid'>
                 {listings.map((listing) => {
                     return <ListingIndexItem listing={listing} key={listing.id} />
@@ -27,6 +29,6 @@ function Listings() {
         </>
     )
 }
-// Kind of failing to see the point of a ListingsIndexItem like was done in exam
-// also my listing.description isn't working for some reason?? But the other elements are..
-export default Listings
+
+
+export default ListingsIndex
