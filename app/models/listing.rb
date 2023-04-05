@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-    validates :title, :lister, :description, :address, :city, :country, :latitude, :longitude, :price, presence: true
+    validates :title, :lister_id, :description, :address, :city, :country, :latitude, :longitude, :price, presence: true
 
     belongs_to :lister,
         primary_key: :id,

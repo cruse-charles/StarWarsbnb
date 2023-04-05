@@ -15,6 +15,8 @@ ApplicationRecord.transaction do
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('listings')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -37,7 +39,7 @@ ApplicationRecord.transaction do
     #Create a listing
     Listing.create!(
       title: 'Amazing NYC Apartment',
-      lister_id: 15,
+      lister_id: 1,
       description: 'This apartment in center NYC gives access everywhere',
       address: '123 Main St',
       city: 'New York City',
@@ -49,7 +51,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Lovely Cottage in Woods',
-      lister_id: 16,
+      lister_id: 1,
       description: 'Come to our cottage for a relaxed and nature-tuned vacation',
       address: 'N/A',
       city: 'N/A',
@@ -61,7 +63,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Mansion',
-      lister_id: 17,
+      lister_id: 2,
       description: 'Visit this waterfront mansion!',
       address: '8240 Rich Ave',
       city: 'Los Angeles',
@@ -73,7 +75,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Cheap and Convenient and Coz',
-      lister_id: 18,
+      lister_id: 3,
       description: 'Come to our apartment in central Berlin',
       address: '93 Schule Strasse',
       city: 'Berlin',
@@ -85,7 +87,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Desert Hut',
-      lister_id: 19,
+      lister_id: 4,
       description: 'Cool in the day and warm at night',
       address: 'N/A',
       city: 'Outside of Phoenix',
@@ -98,8 +100,8 @@ ApplicationRecord.transaction do
     puts 'Creating Reviews...'
 
     Review.create!(
-      listing_id: 8,
-      reviewer_id: 15,
+      listing_id: 1,
+      reviewer_id: 1,
       body: 'I thought this place was excellent',
       cleanliness: 5,
       communication: 4,
@@ -110,8 +112,8 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      listing_id: 8,
-      reviewer_id: 16,
+      listing_id: 1,
+      reviewer_id: 1,
       body: 'Was not happy with the water',
       cleanliness: 1,
       communication: 4,
@@ -122,8 +124,8 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      listing_id: 9,
-      reviewer_id: 15,
+      listing_id: 2,
+      reviewer_id: 2,
       body: 'I loved it here!',
       cleanliness: 5,
       communication: 4,
@@ -134,8 +136,8 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      listing_id: 8,
-      reviewer_id: 17,
+      listing_id: 2,
+      reviewer_id: 2,
       body: 'I had a great time!',
       cleanliness: 5,
       communication: 4,
@@ -146,8 +148,8 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
-      listing_id: 10,
-      reviewer_id: 18,
+      listing_id: 3,
+      reviewer_id: 3,
       body: 'Don not visit!',
       cleanliness: 1,
       communication: 1,

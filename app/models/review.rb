@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
-    validates :listing, :reviewer, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value
+    validates :listing_id, :reviewer_id, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value, presence: true
 
-    belongs_to :lister,
+    belongs_to :listing,
         primary_key: :id,
         foreign_key: :listing_id,
         class_name: :Listing
