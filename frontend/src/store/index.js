@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import session from './session';
 // import listingsReducer from './listings';
 import listings from './listings'
+import reviews from './reviews'
 
 const rootReducer = combineReducers({
   session,
-  listings
+  listings,
+  reviews
   // this is waht names the keys in our state
 });
   

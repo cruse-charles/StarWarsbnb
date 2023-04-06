@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Navigation from "../Navigation";
 import './ListingShowPage.css'
 import testPhoto from '../../../../src/assets/tatooinehome.png'
+import ListingReviews from "../Reviews";
 
 const ListingShowPage = () => {
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const ListingShowPage = () => {
     useEffect(() => {
     // debugger
         dispatch(fetchListing(listingId))
+    // debugger
     }, [listingId, dispatch])
 
 
@@ -41,7 +43,8 @@ const ListingShowPage = () => {
                 <h2>{listing.description}</h2>
             </div>
             <div id='reviews-container'>
-                <h2>reviews</h2>
+                {/* <h2>reviews</h2> */}
+                <ListingReviews />
             </div>
         </div>
         </>

@@ -10,4 +10,6 @@ class Review < ApplicationRecord
         primary_key: :id,
         foreign_key: :reviewer_id,
         class_name: :User
+
+    has_many_attached :photos
 end

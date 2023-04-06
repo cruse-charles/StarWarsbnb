@@ -28,7 +28,7 @@ class User < ApplicationRecord
     class_name: :Review,
     dependent: :destroy
 
-
+  has_one_attached :photo
 
 
 

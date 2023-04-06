@@ -14,6 +14,7 @@ function ListingsIndex() {
     
     useEffect(() => {
         dispatch(fetchListings())
+    // debugger
     }, [dispatch])
 
 

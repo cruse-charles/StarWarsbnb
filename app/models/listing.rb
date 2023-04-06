@@ -12,4 +12,5 @@ class Listing < ApplicationRecord
         class_name: :Review,
         dependent: :destroy
 
+    has_many_attached :photos
 end

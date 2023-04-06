@@ -13,4 +13,13 @@ class Api::ListingsController < ApplicationController
       render json: {errors: 'This listing does not exist'}
     end
   end
+
+
+
+  #I think i need this params for creating
+  # def listing_params
+  #   params.require(:listing).permit()
+  # end
+
+
 end
