@@ -11,8 +11,9 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
+debugger
     @review = Review.new(review_params)
-    if @review.save!
+    if @review.save
       render :show
     else
       render json: @review.errors.full_messages
@@ -36,7 +37,7 @@ class Api::ReviewsController < ApplicationController
   def destroy
     if @review.reviewer_id == current_user.id
       @review.destroy
-      render json: {'Deleted review'}
+      render json: {error: 'Deleted review'}
     end
   end
 
@@ -44,7 +45,17 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:id, :listing_id, :reviewer_id, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value)
+    params.require(:review).permit(:id, 
+      :listing_id, 
+      :reviewer_id, 
+      :body, 
+      :cleanliness, 
+      :communication, 
+      :check_in, 
+      :accuracy, 
+      :location, 
+      :value
+    )
   end
 
 

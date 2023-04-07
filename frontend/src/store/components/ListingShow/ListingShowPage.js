@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { fetchListing, getListing } from "../../listings";
 import { useEffect } from "react";
 import Navigation from "../Navigation";
@@ -10,6 +10,7 @@ import ListingReviews from "../Reviews";
 const ListingShowPage = () => {
     const dispatch = useDispatch();
     const {listingId} = useParams()
+    //this actually needs to match with the url wildcard in the APP route, so that's how we can always get the right one
     const listing = useSelector(getListing(listingId))
 
     useEffect(() => {
@@ -45,6 +46,7 @@ const ListingShowPage = () => {
             </div>
             <div id='reviews-container'>
                 {/* <h2>reviews</h2> */}
+                <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
                 <ListingReviews />
             </div>
         </div>

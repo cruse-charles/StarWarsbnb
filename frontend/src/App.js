@@ -5,6 +5,7 @@ import Navigation from "./store/components/Navigation";
 import ListingsIndex from "./store/components/Listings";
 import Carousel from "./store/components/Carousel";
 import ListingShowPage from "./store/components/ListingShow/ListingShowPage";
+import ReviewForm from "./store/components/Reviews/ReviewForm";
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
           {/* <Route path='/'>
             <ListingsIndex />
           </Route> */}
+          <Route exact path='/listings/:listingId/reviews/new' component={ReviewForm} />
         </Switch>
     </>
   );
