@@ -1,10 +1,10 @@
-#listings-page div{
-    font-family: 'Montserrat', sans-serif;
+/* #listings-page div{
+    font-family: 'Montserrat', sans-serif; */
     /* display: flex;
     justify-content: center; */
-}
+/* } */
 
-h1 {
+/* h1 {
     font-size: 26px;
 }
 
@@ -33,25 +33,204 @@ h1 {
 #images-wrapper{
     display: flex;
     justify-content: center;
-}
+} */
 
-#images-container {
+/* #images-container {
     height: 520px;
-    width: 100%;
+    width: 100%; */
     /* align-self: center; */
-    display: grid;
+    /* display: grid; */
     /* grid-template-columns: 560px 270px 270px;
     grid-template-rows: 245px 245px; */
-    grid-template-columns: 37% 18% 18%;
-    grid-template-rows: 50% 50%;
+    /* grid-template-columns: 37% 18% 18%;
+    grid-template-rows: 45% 45%;
     grid-auto-flow: column;
     gap: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
-}
+    padding-left: 21%;
+    padding-right: 10%; */
+/* } */
 
-#title-container {
+/* #title-container {
+    padding-top: 20px;
     display: flex;
     justify-content: start;
+    padding-left: 21%;
+    height: 100px;
+} */
+
+@media (min-width: 1000px) {
+    #listings-page div{
+        font-family: 'Montserrat', sans-serif;
+        /* display: flex;
+        justify-content: center; */
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    .small-img {
+        height: 100%;
+        width: 100%;
+    }
+    
+    #top-right-pic{
+        border-top-right-radius: 15px;
+    }
+    
+    #bottom-right-pic{
+        border-bottom-right-radius: 15px;
+    }
+    
+    .main-img{
+        height: 100%;
+        width: 100%;
+        grid-column: 1;
+        grid-row: 1 / 3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    
+    #images-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #images-container {
+        height: 520px;
+        width: 100%;
+        /* align-self: center; */
+        display: grid;
+        /* grid-template-columns: 560px 270px 270px;
+        grid-template-rows: 245px 245px; */
+        grid-template-columns: 42% 20.5% 20.5%;
+        grid-template-rows: 35% 35%;
+        grid-auto-flow: column;
+        gap: 10px;
+        padding-left: 13%;
+        /* padding-right: 10%; */
+    }
+    
+    #title-container {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        padding-left: 13%;
+        height: 90px;
+        color: black;
+        /* font-weight: bold; */
+    }
+
+    #title{
+        font-weight: bold;
+        width: 100%;
+        height: 20px;
+    }
+
+    #title-container h1{
+        font-weight: bold;
+    }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1600px) {
+    #listings-page div{
+        font-family: 'Montserrat', sans-serif;
+        /* display: flex;
+        justify-content: center; */
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    .small-img {
+        height: 100%;
+        width: 100%;
+    }
+    
+    #top-right-pic{
+        border-top-right-radius: 15px;
+    }
+    
+    #bottom-right-pic{
+        border-bottom-right-radius: 15px;
+    }
+    
+    .main-img{
+        height: 100%;
+        width: 100%;
+        grid-column: 1;
+        grid-row: 1 / 3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    
+    #images-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #images-container {
+        height: 520px;
+        width: 100%;
+        /* align-self: center; */
+        display: grid;
+        /* grid-template-columns: 560px 270px 270px;
+        grid-template-rows: 245px 245px; */
+        grid-template-columns: 42% 20.5% 20.5%;
+        grid-template-rows: 47% 47%;
+        grid-auto-flow: column;
+        gap: 10px;
+        padding-left: 21%;
+        padding-right: 10%;
+    }
+    
+    #title-container {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        padding-left: 21%;
+        height: 90px;
+        color: black;
+        /* font-weight: bold; */
+    }
+
+    #title{
+        font-weight: bold;
+        width: 100%;
+        height: 20px;
+    }
+
+    #title-container h1{
+        font-weight: bold;
+    }
+
+    #information-container{
+        border: 2px solid red;
+        border-bottom: 1px solid lightgray;
+        width: 33.5%;
+        margin-left: 21%;
+        padding-top: 25px;
+        
+    }
+
+    #information-container h1{
+        font-size: 22px;
+        font-weight: bold;
+        
+    }
+}

@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useParams,Link } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react"
-import { updateReview, createReview, fetchReview } from '../../reviews'
+import { updateReview, createReview, fetchReview, getReview } from '../../reviews'
 
 const ReviewForm = () => {
     const dispatch = useDispatch()
     const {listingId, reviewId} = useParams()
     // let review = useSelector(getReview)
     let user = useSelector((state) => (state.session.user))
+    let review = useSelector(getReview(reviewId))
 
-
+    const [header, setHeader] = useState('Write a review!')
     const [body, setBody] = useState('Required')
     const [cleanliness, setCleanliness] = useState(1)
     const [communication, setCommunication] = useState(1)
@@ -18,33 +19,57 @@ const ReviewForm = () => {
     const [location, setLocation] = useState(1)
     const [value, setValue] = useState(1)
 
+    const changeHandlers = {
+        "Cleanliness" : setCleanliness,
+        "Communication" : setCommunication,
+        "Check In" : setCheckIn,
+        "Accuracy" : setAccuracy,
+        "Location" : setLocation,
+        "Value" : setValue
+    }
+
     useEffect(() => {
         if(reviewId){
             dispatch(fetchReview(reviewId))
-            
+            setHeader('Edit your review:')
+            setBody(review.body)
+            setCleanliness(review.cleanliness)
+            setCommunication(review.communication)
+            setCheckIn(review.checkIn)
+            setAccuracy(review.accuracy)
+            setLocation(review.location)
+            setValue(review.value)
         }
     }, [dispatch, reviewId])
 //ADD MORE TO THE USE EFFECT, MAKE A [HEADER,SETHEADER] FOR WRITING/UPDATING LIKE IN POST EXAMPLE
 //FIND OUT HOW THE SUBMIT GOES INTO THE DATABASE, I GUESS IT'S THROUGH CREATE REVIEW BUT STILL
 
-    const createCategoryStars = (category, rating, setRating) => {
+    // function changeRating(e) {
+        
+    // }
+
+
+
+    // const createCategoryStars = (category, rating, setRating) => {
+    const createCategoryStars = (category) => {
+
         return (
             <div>
                 <h2>{category}</h2>
                 <label> 1
-                    <input type='radio' value={rating}/>
+                    <input type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label> 2
-                    <input type='radio' value={rating}/>
+                    <input type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label> 3
-                    <input type='radio' value={rating}/>
+                    <input type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label> 4
-                    <input type='radio' value={rating}/>
+                    <input type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label> 5
-                    <input type='radio' value={rating}/>
+                    <input type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
             </div>
         )
@@ -61,8 +86,8 @@ const ReviewForm = () => {
             location,
             value
         }
-        newReview.listing_Id = listingId
-        newReview.reviewer_Id = user.id
+        newReview.listing_id = listingId
+        newReview.reviewer_id = user.id
         if(reviewId){
             newReview.id = reviewId
             dispatch(updateReview(newReview))
@@ -72,21 +97,32 @@ const ReviewForm = () => {
 
     }
 
+    function changeBody(e){
+        setBody(e.target.value)
+    }
+
+
     return (
         <>
         {/* <Link to={`/listings/${listing.id}`}>Back</Link> */}
         <form>
-            <h1>Write a Review!</h1>
-            {createCategoryStars('Cleanliness', cleanliness)}
-            {createCategoryStars('Communication', communication)}
-            {createCategoryStars('Check In', checkIn)}
-            {createCategoryStars('Accuracy', accuracy)}
-            {createCategoryStars('Location', location)}
-            {createCategoryStars('Value', value)}
+            <h1>{header}</h1>
+            {/* {createCategoryStars('Cleanliness', cleanliness, setCleanliness)}
+            {createCategoryStars('Communication', communication, setCommunication)}
+            {createCategoryStars('Check In', checkIn, setCheckIn)}
+            {createCategoryStars('Accuracy', accuracy, setAccuracy)}
+            {createCategoryStars('Location', location, setLocation)}
+            {createCategoryStars('Value', value, setValue)} */}
+            {createCategoryStars('Cleanliness')}
+            {createCategoryStars('Communication')}
+            {createCategoryStars('Check In')}
+            {createCategoryStars('Accuracy')}
+            {createCategoryStars('Location')}
+            {createCategoryStars('Value')}
             <label> Write something for... <br/>
-                <textarea></textarea>
+                <textarea defaultValue={body} onChange={changeBody}></textarea>
             </label>
-            <button onClick={handleSubmit} value={body}>Submit</button>
+            <button onClick={handleSubmit} >Submit</button>
             {/* <button value={body}>Submit</button> */}
         </form>
         </>

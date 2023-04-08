@@ -19,17 +19,19 @@ const MenuContextProvider = (props) => {
 function Navigation(){
   return (
     <MenuContextProvider>
-    <div className='navigation-bar'>
-      <div className='airbnb-logo'>
-      <Link to={'/'}>
-        <img id='airbnb-logo' src={airbnbLogo} alt='logo'/>
-      </Link>
-      </div>
-      <div className='searchbar'>
-        Search Bar Here
-      </div>
-      <div>
-        <ProfileButton />
+    <div id='navigation-wrapper'>
+      <div className='navigation-bar'>
+        <div className='airbnb-logo'>
+        <Link to={'/'}>
+          <img id='airbnb-logo' src={airbnbLogo} alt='logo'/>
+        </Link>
+        </div>
+        <div id='searchbar'>
+          Search Bar Here
+        </div>
+        <div>
+          <ProfileButton />
+        </div>
       </div>
     </div>
     </MenuContextProvider>

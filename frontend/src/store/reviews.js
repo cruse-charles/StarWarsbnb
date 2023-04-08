@@ -23,8 +23,11 @@ const removeReview = (review) => ({
 })
 
 
-export const getReviews = state => {    
-    return state.reviews ? Object.values(state.reviews) : []
+export const getListingReviews = (listingId) => state => {    
+    const reviews = state.reviews ? Object.values(state.reviews) : []
+    const filteredReviews = reviews.filter((review) => (review.listingId == listingId))
+// debugger
+    return filteredReviews
 }
 
 export const getReview = (reviewId) => state => {
@@ -55,7 +58,7 @@ export const fetchReview = (reviewId) => async(dispatch) => {
 }
 
 export const createReview = (review) => async(dispatch) => {
-debugger
+// debugger
     const response = await csrfFetch(`/api/reviews/`, {
         method: "POST",
         body: JSON.stringify(review),

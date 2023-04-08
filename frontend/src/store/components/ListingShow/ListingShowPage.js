@@ -29,25 +29,32 @@ const ListingShowPage = () => {
         <div id='listings-page'>
             <Navigation />
             <div id='title-container'>
-                <h1>{listing.title}</h1>
+                <h1 id='title'>{listing.title}</h1><br></br>
+                <div id='location'>{listing.city}, {listing.country}</div>
             </div>
             <div id='images-wrapper'>
                 <div id='images-container'>
-                    <img className='main-img'src={testPhoto}/>
-                    {/* <img className='main-img'src={listing.photoUrls[0]} alt='listing'/> */}
+                    {/* <img className='main-img'src={testPhoto}/> */}
+                    <img className='main-img'src={listing?.photoUrls?.[0]} alt='listing'/>
                     <img className='small-img' src={testPhoto} alt='listing'/>
                     <img className='small-img' src={testPhoto} alt='listing'/>
                     <img id='top-right-pic' className='small-img' src={testPhoto} alt='listing'/>
                     <img id='bottom-right-pic'className='small-img' src={testPhoto} alt='listing'/>
                 </div>
             </div>
-            <div id='information-container'>
-                <h2>{listing.description}</h2>
-            </div>
-            <div id='reviews-container'>
-                {/* <h2>reviews</h2> */}
-                <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
-                <ListingReviews />
+            <div id='information-wrapper'>
+                <div id='information-container'>
+                    <h1>Entire home hosted by {listing.listerId}</h1>
+                    <h2>4 guests 2 bedrooms 3 beds 1.5 baths</h2>
+                </div>
+                <div id='description container'>
+                    <h2>{listing.description}</h2>
+                </div>
+                <div id='reviews-container'>
+                    {/* <h2>reviews</h2> */}
+                    <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
+                    <ListingReviews />
+                </div>
             </div>
         </div>
         </>

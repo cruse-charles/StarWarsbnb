@@ -8,10 +8,11 @@ class Api::ReviewsController < ApplicationController
   def show
     @review = Review.find_by(id: params[:id])
     render :show
+    # render json: {code: "success"}
   end
 
   def create
-debugger
+# debugger
     @review = Review.new(review_params)
     if @review.save
       render :show
@@ -45,7 +46,8 @@ debugger
   private
 
   def review_params
-    params.require(:review).permit(:id, 
+    params.require(:review).permit(
+      :id, 
       :listing_id, 
       :reviewer_id, 
       :body, 
