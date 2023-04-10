@@ -115,7 +115,7 @@
         padding-top: 20px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: start;
+        justify-content: flex-start;
         padding-left: 13%;
         height: 90px;
         color: black;
@@ -224,7 +224,7 @@
         padding-top: 20px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: start;
+        justify-content: flex-start;
         padding-left: 21%;
         height: 90px;
         color: black;

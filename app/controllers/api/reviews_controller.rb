@@ -40,7 +40,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     if @review.reviewer_id == current_user.id
       @review.destroy
-      render json: {message: 'Deleted review'}
+      # render json: {message: 'Deleted review'}
       # render :show
     end
   end

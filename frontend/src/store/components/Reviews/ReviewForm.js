@@ -42,14 +42,6 @@ const ReviewForm = () => {
             setValue(review.value)
         }
     }, [dispatch, reviewId])
-//ADD MORE TO THE USE EFFECT, MAKE A [HEADER,SETHEADER] FOR WRITING/UPDATING LIKE IN POST EXAMPLE
-//FIND OUT HOW THE SUBMIT GOES INTO THE DATABASE, I GUESS IT'S THROUGH CREATE REVIEW BUT STILL
-
-    // function changeRating(e) {
-        
-    // }
-
-
 
     // const createCategoryStars = (category, rating, setRating) => {
     const createCategoryStars = (category) => {

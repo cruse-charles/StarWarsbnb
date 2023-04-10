@@ -17,9 +17,9 @@ const receiveReview = (review) => ({
     review
 })
 
-const removeReview = (review) => ({
+const removeReview = (reviewId) => ({
     type: REMOVE_REVIEW,
-    review
+    reviewId
 })
 
 
@@ -96,7 +96,7 @@ const reviewReducer = (state = {}, action) => {
             return {...state, [action.review.id]: action.review}
         case REMOVE_REVIEW:
             const newState = {...state}
-            delete newState[action.postId]
+            delete newState[action.reviewId]
             return newState
         default:
             return state

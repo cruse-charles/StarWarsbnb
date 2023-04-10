@@ -17,18 +17,6 @@ if (process.env.NODE_ENV !== "production") {
   window.sessionActions = sessionActions;
 }
 
-function Root() {
-  return (
-    <ModalProvider>
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>
-    </ModalProvider>
-  );
-}
-
 const renderApplication = () => {
   ReactDOM.render(
     <React.StrictMode>
@@ -42,7 +30,19 @@ if (
   sessionStorage.getItem("currentUser") === null ||
   sessionStorage.getItem("X-CSRF-Token") === null 
 ) {
-  store.dispatch(sessionActions.restoreSession()).then(renderApplication);
-} else {
   renderApplication();
+} else {
+  store.dispatch(sessionActions.restoreSession()).then(renderApplication);
+}
+
+function Root() {
+  return (
+    <ModalProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ModalProvider>
+  );
 }

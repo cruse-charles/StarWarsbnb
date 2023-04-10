@@ -4,7 +4,7 @@ import { fetchListing, getListing } from "../../listings";
 import { useEffect } from "react";
 import Navigation from "../Navigation";
 import './ListingShowPage.css'
-import testPhoto from '../../../../src/assets/tatooinehome.png'
+import testPhoto from '../../../../src/assets/l2p1.png'
 import ListingReviews from "../Reviews";
 
 const ListingShowPage = () => {
