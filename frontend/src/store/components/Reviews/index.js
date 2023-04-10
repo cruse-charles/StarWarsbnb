@@ -11,6 +11,7 @@ const ListingReviews = () => {
     // console.log(reviews)
     const {listingId} = useParams()
     const reviews = useSelector(getListingReviews(listingId))
+    let reviewsList
     // console.log(listingId)
 
     // dispatch(fetchReviews(1))
@@ -20,6 +21,13 @@ const ListingReviews = () => {
         dispatch(fetchReviews(listingId))
         // console.log('inside use Effect, after dispatch')
     }, [listingId, dispatch])
+
+//     useEffect(() => {
+// debugger
+//         reviewsList = reviews.map((review) => {
+//             return <ReviewIndexItem review={review} key={review.id} />
+//         })
+//     }, [reviews])
     
     if(!reviews) {
         return null;
@@ -27,14 +35,12 @@ const ListingReviews = () => {
 
     return (
         <>
-        <h1>Reviews</h1>
-            <div>
-                {
-                    reviews.map((review) => {
-                        return <ReviewIndexItem review={review} key={review.id} />
-                    })
-                }
-            </div>
+            {
+                reviews.map((review) => {
+                    return <ReviewIndexItem review={review} key={review.id} />
+                })
+            }
+            {/* {reviewsList} */}
         </>
     )
 }

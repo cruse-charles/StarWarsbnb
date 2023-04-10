@@ -182,7 +182,29 @@
         display: flex;
         justify-content: center;
     }
-    
+    /* COMMENT OUT BETWEEN HERE TO TURN BACK */
+    #bottom-portion{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        /* width: 2000px; */
+    }
+
+    #information-wrapper{
+        margin-left: 21%;
+        margin-right: 21%;
+        /* margin-right: 21%; */
+        /* padding-left: 21%; */
+        width: 100%;
+        display: flex;
+        border: 1px solid red;
+        border-bottom: 1px solid lightgray;
+
+    }
+
+
+    /* COMMENT OUT BETWEEN HERE TO TURN BACK */
+
     #images-container {
         height: 520px;
         width: 100%;
@@ -220,17 +242,96 @@
     }
 
     #information-container{
-        border: 2px solid red;
+        width: 58%;
+        /* border-bottom: 1px solid lightgray; */
+        border: 1px solid green;
+    }
+
+    #hosted-by-container{
+        /* border: 2px solid red; */
         border-bottom: 1px solid lightgray;
-        width: 33.5%;
-        margin-left: 21%;
+        /* width: 42%; */
+        /* margin-left: 21%; */
         padding-top: 25px;
+        padding-bottom: 25px;
+        height: 52px;
+
+    }
+
+    #hosted-by-container h1{
+        font-size: 22px;
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+
+    #reservation-container{
+        border: 1px solid red;
+        margin-left: 8%;
+        width: 34%;
+        height: 490px;
         
     }
 
-    #information-container h1{
-        font-size: 22px;
+    #highlights-container{
+        padding-top: 38px;
+        border-bottom: 1px solid lightgray;
+        height: 215px;
+    }
+
+    #air-cover-container{
+        /* border: 1px solid red; */
+        border-bottom: 1px solid lightgray;
+        width: 100%;
+        height: 180px;
+    }
+
+    #description-container{
+        height: 270px;
+        border-bottom: 1px solid lightgray;
+        padding-top: 40px;
+    }
+
+    #icons-container{
+        height: 415px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    #calendar-container{
+        height: 560px;
+        /* border-bottom: 1px solid lightgray; */
+    }
+
+    #reviews-wrapper{
+        margin-left: 21%;
+        margin-right: 21%;
+        width: 100%;
+        border: 1px solid blue;
+    }
+
+    #review-stats{
+        height: 240px;
+    }
+
+    #review-stats h2{
+        font-size: 20px;
         font-weight: bold;
-        
+    }
+
+    #reviews-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .review-card{
+        font-family: 'Montserrat', sans-serif;
+        border: 1px solid purple;
+        width: 80%;
+        padding-right: 20%;
+        height: 196px;
+    }
+
+    .reviewer-name{
+        height: 40px;
+        padding-bottom: 15px;
     }
 }

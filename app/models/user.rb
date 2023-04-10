@@ -30,6 +30,11 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :reservations,
+    primary_key: :id,
+    foreign_key: :reserver_id,
+    class_name: :Reservation,
+    dependent: :destroy
 
 
   def self.find_by_credentials(credential, password)

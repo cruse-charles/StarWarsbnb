@@ -1,4 +1,5 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
       @reviews =  Review.where(listing_id: params[:listing_id])
@@ -36,9 +37,11 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find_by(id: params[:id])
     if @review.reviewer_id == current_user.id
       @review.destroy
-      render json: {error: 'Deleted review'}
+      render json: {message: 'Deleted review'}
+      # render :show
     end
   end
 

@@ -7,7 +7,7 @@ const ListingIndexItem = ({listing}) => {
     const history = useHistory()
 
     const routeChange = () => {
-        let path = `listings/${listing.id}`
+        let path = `/listings/${listing.id}`
         history.push(path)
     }
 

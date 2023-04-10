@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useParams,Link } from "react-router-dom/cjs/react-router-dom.min"
+import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react"
 import { updateReview, createReview, fetchReview, getReview } from '../../reviews'
 
@@ -9,6 +9,7 @@ const ReviewForm = () => {
     // let review = useSelector(getReview)
     let user = useSelector((state) => (state.session.user))
     let review = useSelector(getReview(reviewId))
+    const history = useHistory()
 
     const [header, setHeader] = useState('Write a review!')
     const [body, setBody] = useState('Required')
@@ -95,6 +96,8 @@ const ReviewForm = () => {
             dispatch(createReview(newReview))
         }
 
+        history.push(`/listings/${listingId}`)
+
     }
 
     function changeBody(e){
@@ -120,10 +123,10 @@ const ReviewForm = () => {
             {createCategoryStars('Location')}
             {createCategoryStars('Value')}
             <label> Write something for... <br/>
-                <textarea defaultValue={body} onChange={changeBody}></textarea>
+                {/* <textarea defaultValue={body} onChange={changeBody}></textarea> */}
+                <textarea value ={body} onChange={changeBody}></textarea>
             </label>
             <button onClick={handleSubmit} >Submit</button>
-            {/* <button value={body}>Submit</button> */}
         </form>
         </>
     )

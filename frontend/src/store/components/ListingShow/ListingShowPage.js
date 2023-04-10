@@ -23,7 +23,7 @@ const ListingShowPage = () => {
     if(!listing) {
         return null;
     }
-
+// debugger
     return (
         <>
         <div id='listings-page'>
@@ -37,23 +37,47 @@ const ListingShowPage = () => {
                     {/* <img className='main-img'src={testPhoto}/> */}
                     <img className='main-img'src={listing?.photoUrls?.[0]} alt='listing'/>
                     <img className='small-img' src={testPhoto} alt='listing'/>
+                    {/* <img className='main-img'src={listing?.photoUrls?.[1]} alt='listing'/> */}
                     <img className='small-img' src={testPhoto} alt='listing'/>
                     <img id='top-right-pic' className='small-img' src={testPhoto} alt='listing'/>
                     <img id='bottom-right-pic'className='small-img' src={testPhoto} alt='listing'/>
                 </div>
             </div>
-            <div id='information-wrapper'>
-                <div id='information-container'>
-                    <h1>Entire home hosted by {listing.listerId}</h1>
-                    <h2>4 guests 2 bedrooms 3 beds 1.5 baths</h2>
+            <div id='bottom-portion'>
+                <div id='information-wrapper'>
+                    <div id='information-container'>                        
+                        <div id='hosted-by-container'>
+                            <h1>Entire home hosted by {listing.listerId}</h1>
+                            <h2>4 guests 2 bedrooms 3 beds 1.5 baths</h2>
+                        </div>
+                        <div id='highlights-container'>
+                            highlights container
+                        </div>
+                        <div id='air-cover-container'>
+                            air cover portion
+                        </div>
+                        <div id='description-container'>
+                            <h2>{listing.description}</h2>
+                        </div>
+                        <div id='icons-container'>
+                            Icons
+                        </div>
+                        <div id='calendar-container'>
+                            Calendar container
+                        </div>
+                    </div>
+                    <div id='reservation-container'>
+                        Reservation
+                    </div>
                 </div>
-                <div id='description container'>
-                    <h2>{listing.description}</h2>
-                </div>
-                <div id='reviews-container'>
-                    {/* <h2>reviews</h2> */}
-                    <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
-                    <ListingReviews />
+                <div id='reviews-wrapper'>
+                    <div id='review-stats'>
+                        <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link><br></br>
+                        <h2>review stats</h2>
+                    </div>
+                    <div id='reviews-container'>
+                        <ListingReviews />
+                    </div>
                 </div>
             </div>
         </div>

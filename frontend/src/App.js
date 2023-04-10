@@ -19,6 +19,7 @@ function App() {
             <ListingsIndex />
           </Route> */}
           <Route exact path='/listings/:listingId/reviews/new' component={ReviewForm} />
+          <Route exact path='/listings/:listingId/reviews/:reviewId/edit'component={ReviewForm}/>
         </Switch>
     </>
   );
