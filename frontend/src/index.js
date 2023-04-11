@@ -8,6 +8,7 @@ import App from "./App";
 import configureStore from "./store";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
+import { restoreCSRF } from "./store/csrf";
 
 const store = configureStore();
 
@@ -30,6 +31,7 @@ if (
   sessionStorage.getItem("currentUser") === null ||
   sessionStorage.getItem("X-CSRF-Token") === null 
 ) {
+  restoreCSRF();
   renderApplication();
 } else {
   store.dispatch(sessionActions.restoreSession()).then(renderApplication);

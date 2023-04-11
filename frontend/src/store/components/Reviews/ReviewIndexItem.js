@@ -19,16 +19,7 @@ const ReviewIndexItem = ({review}) => {
             <div className='reviewer-name'>{review.reviewerId}
                 <p>review date</p>
             </div>
-            
             <div>{review.body}</div><br></br>
-            {/* <div>            
-                cleanliness: {review.cleanliness}<br/>
-                communication: {review.communication}<br/>
-                checkIn: {review.checkIn}<br/>
-                accuracy: {review.accuracy}<br/>
-                location: {review.location}<br/>
-                value: {review.value}<br/>
-            </div> */}
             <Link to={`/listings/${listingId}/reviews/${review.id}/edit`}>
                 Edit
             </Link>

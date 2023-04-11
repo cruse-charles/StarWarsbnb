@@ -1,15 +1,16 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
-// import listingsReducer from './listings';
 import listings from './listings'
 import reviews from './reviews'
+import reservations from './reservations'
 
 const rootReducer = combineReducers({
   session,
   listings,
-  reviews
-  // this is waht names the keys in our state
+  reviews,
+  reservations
+  // this is what names the keys in our state
 });
   
 let enhancer;

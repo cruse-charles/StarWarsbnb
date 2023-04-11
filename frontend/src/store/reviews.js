@@ -26,7 +26,6 @@ const removeReview = (reviewId) => ({
 export const getListingReviews = (listingId) => state => {    
     const reviews = state.reviews ? Object.values(state.reviews) : []
     const filteredReviews = reviews.filter((review) => (review.listingId == listingId))
-// debugger
     return filteredReviews
 }
 
@@ -41,10 +40,10 @@ export const getReview = (reviewId) => state => {
 
 export const fetchReviews = (listingId) => async(dispatch) => {
     const response = await csrfFetch(`/api/listings/${listingId}/reviews`)
+    
     if(response.ok){
         const data = await response.json()
         dispatch(receiveReviews(data))
-// debugger
     }
 }
 
@@ -58,12 +57,12 @@ export const fetchReview = (reviewId) => async(dispatch) => {
 }
 
 export const createReview = (review) => async(dispatch) => {
-// debugger
     const response = await csrfFetch(`/api/reviews/`, {
         method: "POST",
         body: JSON.stringify(review),
         headers: {'Content-Type': 'application/json'}
     })
+
     const data = await response.json()
     dispatch(receiveReview(data))
 }
@@ -74,6 +73,7 @@ export const updateReview = (review) => async(dispatch) => {
         body: JSON.stringify(review),
         headers: {'Content-Type': 'application/json'}
     })
+
     const data = await response.json()
     dispatch(receiveReview(data))
 }
@@ -82,6 +82,7 @@ export const deleteReview = (reviewId) => async(dispatch) => {
     const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "DELETE"
     })
+    
     if(response.ok){
         dispatch(removeReview(reviewId))
     }

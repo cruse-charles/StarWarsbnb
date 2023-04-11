@@ -6,6 +6,7 @@ import Navigation from "../Navigation";
 import './ListingShowPage.css'
 import testPhoto from '../../../../src/assets/l2p1.png'
 import ListingReviews from "../Reviews";
+import ListsingReservationForm from "../Reservations/ListingReservationForm";
 
 const ListingShowPage = () => {
     const dispatch = useDispatch();
@@ -14,16 +15,13 @@ const ListingShowPage = () => {
     const listing = useSelector(getListing(listingId))
 
     useEffect(() => {
-    // debugger
         dispatch(fetchListing(listingId))
-    // debugger
     }, [listingId, dispatch])
 
 
     if(!listing) {
         return null;
     }
-// debugger
     return (
         <>
         <div id='listings-page'>
@@ -68,6 +66,7 @@ const ListingShowPage = () => {
                     </div>
                     <div id='reservation-container'>
                         Reservation
+                        <ListsingReservationForm />
                     </div>
                 </div>
                 <div id='reviews-wrapper'>

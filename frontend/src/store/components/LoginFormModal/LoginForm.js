@@ -60,7 +60,8 @@ function LoginForm({onSubmit}) {
     <h2>Welcome to Starwarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
+        {/* {errors.map(error => <li key={error}>{error}</li>)} */}
+        {errors.map(error => <li key={error}>{error.message}</li>)}
       </ul>
         <input className='user-auth-entry'
           type="text"

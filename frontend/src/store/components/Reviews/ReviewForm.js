@@ -6,7 +6,6 @@ import { updateReview, createReview, fetchReview, getReview } from '../../review
 const ReviewForm = () => {
     const dispatch = useDispatch()
     const {listingId, reviewId} = useParams()
-    // let review = useSelector(getReview)
     let user = useSelector((state) => (state.session.user))
     let review = useSelector(getReview(reviewId))
     const history = useHistory()
@@ -102,12 +101,6 @@ const ReviewForm = () => {
         {/* <Link to={`/listings/${listing.id}`}>Back</Link> */}
         <form>
             <h1>{header}</h1>
-            {/* {createCategoryStars('Cleanliness', cleanliness, setCleanliness)}
-            {createCategoryStars('Communication', communication, setCommunication)}
-            {createCategoryStars('Check In', checkIn, setCheckIn)}
-            {createCategoryStars('Accuracy', accuracy, setAccuracy)}
-            {createCategoryStars('Location', location, setLocation)}
-            {createCategoryStars('Value', value, setValue)} */}
             {createCategoryStars('Cleanliness')}
             {createCategoryStars('Communication')}
             {createCategoryStars('Check In')}
@@ -115,7 +108,6 @@ const ReviewForm = () => {
             {createCategoryStars('Location')}
             {createCategoryStars('Value')}
             <label> Write something for... <br/>
-                {/* <textarea defaultValue={body} onChange={changeBody}></textarea> */}
                 <textarea value ={body} onChange={changeBody}></textarea>
             </label>
             <button onClick={handleSubmit} >Submit</button>

@@ -1,4 +1,3 @@
-// import TotalPriceButton from "./TotalPriceButton"
 import { fetchListings, getListings } from "../../listings"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
@@ -14,7 +13,6 @@ function ListingsIndex() {
     
     useEffect(() => {
         dispatch(fetchListings())
-    // debugger
     }, [dispatch])
 
 

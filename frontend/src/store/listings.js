@@ -43,10 +43,9 @@ export const fetchListings = () => async (dispatch) => {
 export const fetchListing = (listingId) => async (dispatch) => {
     const response = await csrfFetch(`/api/listings/${listingId}`)
     const data = await response.json()
-// debugger
     dispatch(receiveListing(data.listing))
 }
-//tf is this being nested for
+
 
 
 

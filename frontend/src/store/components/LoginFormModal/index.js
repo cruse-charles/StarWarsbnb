@@ -1,4 +1,3 @@
-// import React, { useState, useContext } from 'react';
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import LoginForm from './LoginForm';
@@ -6,7 +5,6 @@ import LoginForm from './LoginForm';
 
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
-  // debugger
   // const {menuState, setMenuState} = useContext(menuContext) 
 
   const handleClick = () => {

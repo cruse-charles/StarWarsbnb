@@ -5,12 +5,17 @@ import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import { menuContext } from ".";
 import { useContext } from "react";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function ProfileButton() {
   const dispatch = useDispatch();
   // const [showMenu, setShowMenu] = useState(false);
   const {menuState, setMenuState} = useContext(menuContext) 
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory()
+  
+  const userId = useSelector(state => state.session?.user?.id)
+
   
   const toggleMenu = () => {
     // setShowMenu(!showMenu);
@@ -23,6 +28,13 @@ function ProfileButton() {
     toggleMenu()
   };
 
+  const routeChange = () => {
+    if(userId){
+      let path = `/users/${userId}`
+      history.push(path)
+    }
+  }
+
   let sessionLinks
   if(!sessionUser) {
     sessionLinks = (
@@ -33,16 +45,15 @@ function ProfileButton() {
     );
   }
 
-  let logoutButton
+  let userButtons
   if(sessionUser) {
-    logoutButton = (
+    userButtons = (
       <>
       <div>
-        {/* <button>Messages</button><br></br> */}
-        <button>Trips</button><br></br>
-        <button>Wishlists</button><br></br>
-        {/* <button>Account</button><br></br> */}
-        <button onClick={logout}>Log Out</button>
+        <div onClick={routeChange}>Trips</div><br></br>
+        {/* <div>Trips</div><br></br> */}
+        <div>Wishlists</div><br></br>
+        <div onClick={logout}>Log Out</div>
       </div>
       </>
     )
@@ -55,13 +66,11 @@ function ProfileButton() {
         <i id='hamburger' className="fa-sharp fa-solid fa-bars" />
         <i id='account-icon' className="fa-solid fa-user" />
       </button>
-      {/* {showMenu && ( */}
       {menuState && (
         <div className="profile-dropdown">
           <div>{sessionLinks}</div>
           <div>
-            {/* <button onClick={logout}>Log Out</button> */}
-            {logoutButton}
+            {userButtons}
           </div>
         </div>
       )}
