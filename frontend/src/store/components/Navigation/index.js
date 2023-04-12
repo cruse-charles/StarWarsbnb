@@ -27,7 +27,7 @@ function Navigation(){
         </Link>
         </div>
         <div id='searchbar'>
-          Search Bar Here
+          Anywhere | Anyweek | Add Guests
         </div>
         <div>
           <ProfileButton />

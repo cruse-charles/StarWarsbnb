@@ -1,17 +1,19 @@
 #navigation-wrapper{
     border-bottom: 1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navigation-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    position: sticky;
     /* border-bottom: 1px solid lightgray; */
     height: 80px;
     width: 75%;
     align-items: center;
-    padding-left: 12%;
-    padding-right: 12%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 
@@ -58,12 +60,21 @@
 }
 
 #searchbar{
+    display: flex;
     border: 1px solid lightgray;
     background-color: white;
     border-radius: 21px;
-    height: 42px;
+    height: 48px;
     transition: box-shadow 0.2s ease;
-    width: 300px;
+    width: 330px;
+
+    align-items: center;
+    align-content: space-around;
+    font-size: 16px;
+    font-weight: bold;
+    
+
+    
 }
 
 #searchbar:hover {

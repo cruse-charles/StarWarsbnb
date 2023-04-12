@@ -21,12 +21,8 @@ time, mark, audio, video {
 
 #listings-grid{
     display: grid;
-    /* grid-template-columns: auto auto auto; */
-    /* padding: 30px; */
     padding: 15px;
     padding-top: 15px;
-    /* padding-left: 5%;
-    padding-right: 5%; */
     column-gap: 22px;
     row-gap: 30px;
     font-family: 'Montserrat', sans-serif;
@@ -38,10 +34,10 @@ time, mark, audio, video {
 }
 
 #listing-card {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 360px;
     text-align: left;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     overflow: hidden;
     font-family: inherit;
     cursor: pointer;
@@ -59,12 +55,13 @@ time, mark, audio, video {
 #listing-profile-photo {
     height: 72%;
     width: 100%;
-
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 
 #listing-price-line {
     position: relative;
-    top: 35px;
+    top: 8px;
 }
 
 
@@ -80,4 +77,38 @@ time, mark, audio, video {
 
 div:link {
     text-decoration: none;
+}
+
+#carousel-container{
+    height: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lightgray;
+    
+}
+
+.icon-container {
+    position: relative;
+    top: 10px;
+    border: 1px solid black;
+    height: 78px; 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.icon-container .fa-solid {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    top: 40px;
+    color: gray
+}
+
+.icon-container p {
+    position: relative;
+    top: 25px;
+    color: gray
 }

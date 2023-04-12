@@ -10,6 +10,7 @@ const ReservationIndex = () => {
     const dispatch = useDispatch()
     const {userId} = useParams()
     const reservations = useSelector(getUserReservations(userId))
+// debugger
     
     useEffect(() => {
         dispatch(fetchReservations(userId))
@@ -19,6 +20,7 @@ const ReservationIndex = () => {
         <>
         <div id='reservation-wrapper'>
             <div id='reservation-container'>
+                <div>Reservation Container</div>
                 {
                     reservations.map((reservation) => {
                         return <ReservationIndexItem reservation = {reservation} key={reservation.id} />

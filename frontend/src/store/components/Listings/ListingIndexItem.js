@@ -14,6 +14,8 @@ const ListingIndexItem = ({listing}) => {
         <div id='listing-card' onClick={routeChange}>
             <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
             <div id='listing-city-country'>{listing.city}, {listing.country}</div>
+            <div>Hosted by...</div>
+            <div>Apr 15- Apr 18</div>
             <div id='listing-price-line'><span id='listing-price'>${listing.price}</span> night</div>
         </div>
     )

@@ -40,7 +40,7 @@ export const getReview = (reviewId) => state => {
 
 export const fetchReviews = (listingId) => async(dispatch) => {
     const response = await csrfFetch(`/api/listings/${listingId}/reviews`)
-    
+
     if(response.ok){
         const data = await response.json()
         dispatch(receiveReviews(data))
