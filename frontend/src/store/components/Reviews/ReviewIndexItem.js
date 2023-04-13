@@ -16,16 +16,19 @@ const ReviewIndexItem = ({review}) => {
 
     return (
         <div className='review-card'>
-            <div className='reviewer-name'>{review.reviewerId}
+            <div className='reviewer-name'>
+                <h2>{review.reviewerName}</h2>
                 <p>review date</p>
             </div>
             <div>{review.body}</div><br></br>
-            <Link to={`/listings/${listingId}/reviews/${review.id}/edit`}>
-                Edit
-            </Link>
-            <Link onClick={handleDelete}>
-                Remove
-            </Link>
+            <div id='edit-remove-container'>
+                <Link to={`/listings/${listingId}/reviews/${review.id}/edit`}>
+                    Edit
+                </Link>
+                <Link onClick={handleDelete}>
+                    Remove
+                </Link>
+            </div>
             
         </div>
     )

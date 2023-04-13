@@ -227,15 +227,44 @@
     }
 
     #description-container{
-        height: 270px;
+        /* height: 270px; */
+        display: flex;
         border-bottom: 1px solid lightgray;
         padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     #icons-container{
-        height: 415px;
+        padding-top: 50px;
+        height: 380px;
         border-bottom: 1px solid lightgray;
     }
+
+    #icons-container h2{
+        font-size: 22px;
+        font-weight: bold;
+        padding-bottom: 25px;
+    }
+
+    #icons-list{
+        /* height: 100%; */
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+
+    .offered-icons{
+        height: 50px;
+        width: 50%;
+        color: black;
+
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+    }
+
 
     #calendar-container{
         height: 560px;
@@ -245,7 +274,7 @@
         margin-left: 14%;
         margin-right: 14%;
         width: 100%;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
     }
 
     #review-stats{
@@ -258,16 +287,41 @@
     }
 
     #reviews-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        /* display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+
+        /* display: flex; */
+        /* justify-content: left; */
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+
     }
 
     .review-card{
         font-family: 'Montserrat', sans-serif;
-        border: 1px solid purple;
+        /* border: 1px solid purple; */
         width: 80%;
         padding-right: 20%;
         height: 196px;
+
+        /* display: flex;
+        font-family: 'Montserrat', sans-serif;
+        border: 1px solid purple;
+        width: 39%;
+        padding-right: 10%;
+        height: 196px; */
+
+    }
+
+    .reviewer-name h2 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #edit-remove-container{
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
     }
 
     .reviewer-name{
@@ -310,9 +364,11 @@
         color: gray
     }
 
-    .fa-solid{
+    .highlight-container .fa-solid{
         position: relative;
         top: 6px;
     }
+
+
 
 /* } */
