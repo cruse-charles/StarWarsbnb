@@ -32,13 +32,11 @@ const ListingShowPage = () => {
             </div>
             <div id='images-wrapper'>
                 <div id='images-container'>
-                    {/* <img className='main-img'src={testPhoto}/> */}
                     <img className='main-img'src={listing?.photoUrls?.[0]} alt='listing'/>
-                    <img className='small-img' src={testPhoto} alt='listing'/>
-                    {/* <img className='main-img'src={listing?.photoUrls?.[1]} alt='listing'/> */}
-                    <img className='small-img' src={testPhoto} alt='listing'/>
-                    <img id='top-right-pic' className='small-img' src={testPhoto} alt='listing'/>
-                    <img id='bottom-right-pic'className='small-img' src={testPhoto} alt='listing'/>
+                    <img className='small-img' src={listing?.photoUrls?.[1]} alt='listing'/>
+                    <img className='small-img' src={listing?.photoUrls?.[2]} alt='listing'/>
+                    <img id='top-right-pic' className='small-img' src={listing?.photoUrls?.[3]} alt='listing'/>
+                    <img id='bottom-right-pic'className='small-img' src={listing?.photoUrls?.[4]} alt='listing'/>
                 </div>
             </div>
             <div id='bottom-portion'>
@@ -48,26 +46,52 @@ const ListingShowPage = () => {
                             <h1>Entire home hosted by {listing.listerId}</h1>
                             <h2>4 guests 2 bedrooms 3 beds 1.5 baths</h2>
                         </div>
-                        <div id='highlights-container'>
-                            highlights container
+                        <div id='highlights-wrapper'>
+                            <div className='highlight-container' id='highlight3'>
+                                <div className='highlight-icon-container'><i className="fa-solid fa-medal fa-xl"></i></div>
+                                <div className='highlight-text-container'>
+                                    <h2>This host is a SuperHost</h2>
+                                    <div>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</div>
+                                </div>
+                            </div>
+                            <div className='highlight-container' id='highlight3'>
+                                <div className='highlight-icon-container'><i className="fa-solid fa-location-dot fa-xl"></i></div>
+                                <div className='highlight-text-container'>
+                                    <h2>Great location</h2>
+                                    <div>95% of recent guests gave the location a 5-star rating.</div>
+                                </div>
+                            </div>
+                            <div className='highlight-container' id='highlight3'>
+                                <div className='highlight-icon-container'><i className="fa-solid fa-calendar fa-xl"></i></div>
+                                <div className='highlight-text-container'>
+                                    <h2>Free cancellation within 48 hours.</h2>
+                                    <div></div>
+                                </div>
+                            </div>
+
+                            {/* <div>
+                                <div className='highlight-container' id='highlight1'><i className="fa-solid fa-location-dot"></i></div>
+                            </div>
+                            <div>
+                                <div className='highlight-container' id='highlight2'><i className="fa-solid fa-calendar"></i></div>
+                            </div> */}
                         </div>
-                        <div id='air-cover-container'>
+                        {/* <div id='air-cover-container'>
                             air cover portion
-                        </div>
+                        </div> */}
                         <div id='description-container'>
                             <h2>{listing.description}</h2>
                         </div>
                         <div id='icons-container'>
                             Icons
                         </div>
-                        <div id='calendar-container'>
+                        {/* <div id='calendar-container'>
                             Calendar container
-                        </div>
+                        </div> */}
                     </div>
-                    <div id='reservation-container'>
-                        Reservation
+                    {/* <div id='form-reservation-container'> */}
                         <ListsingReservationForm />
-                    </div>
+                    {/* </div> */}
                 </div>
                 <div id='reviews-wrapper'>
                     <div id='review-stats'>

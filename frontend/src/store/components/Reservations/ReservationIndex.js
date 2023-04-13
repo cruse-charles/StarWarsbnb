@@ -19,7 +19,7 @@ const ReservationIndex = () => {
     return (
         <>
         <div id='reservation-wrapper'>
-            <div id='reservation-container'>
+            <div id='listing-reservation-container'>
                 <div>Reservation Container</div>
                 {
                     reservations.map((reservation) => {

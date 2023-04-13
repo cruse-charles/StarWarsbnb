@@ -22,14 +22,14 @@ function Navigation(){
     <div id='navigation-wrapper'>
       <div className='navigation-bar'>
         <div className='airbnb-logo'>
-        <Link to={'/'}>
-          <img id='airbnb-logo' src={airbnbLogo} alt='logo'/>
-        </Link>
+          <Link to={'/'}>
+            <img id='airbnb-logo' src={airbnbLogo} alt='logo'/>
+          </Link>
         </div>
         <div id='searchbar'>
           Anywhere | Anyweek | Add Guests
         </div>
-        <div>
+        <div id='profile-button-container'>
           <ProfileButton />
         </div>
       </div>

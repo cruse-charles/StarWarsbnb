@@ -1,5 +1,12 @@
 json.set! :listing do
-    json.extract! @listing, :id, :lister_id, :title, :description, :address, :city, :country
+    json.extract! @listing, 
+        :id, 
+        :lister_id, 
+        :title, 
+        :description, 
+        :address, 
+        :city, 
+        :country
     json.photoUrls @listing.photos.map {|photo| photo.url}
 end
 

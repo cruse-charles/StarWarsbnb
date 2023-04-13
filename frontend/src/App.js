@@ -5,6 +5,7 @@ import ListingsIndex from "./store/components/Listings";
 import ListingShowPage from "./store/components/ListingShow/ListingShowPage";
 import ReviewForm from "./store/components/Reviews/ReviewForm";
 import ProfilePage from "./store/components/Profile/ProfilePage";
+import ListsingReservationForm from "./store/components/Reservations/ListingReservationForm";
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
         <Route exact path='/listings/:listingId/reviews/new' component={ReviewForm} />
         <Route exact path='/listings/:listingId/reviews/:reviewId/edit'component={ReviewForm}/>
         <Route exact path ='/users/:userId' component={ProfilePage}/>
+        <Route exact path ='/reservations/:reservationId/edit' component={ListsingReservationForm}/>
       </Switch>
     </>
   );

@@ -10,7 +10,8 @@ function LoginForm({onSubmit}) {
   const [credential, setCredential] = useState(" Username or Email");
   const [password, setPassword] = useState(" Password");
   const [errors, setErrors] = useState([]);
-  const {menuState, setMenuState} = useContext(menuContext) 
+  const {menuState, setMenuState} = useContext(menuContext)
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,12 +57,12 @@ function LoginForm({onSubmit}) {
 
   return (
     <>
-      <h4>Log in</h4>
-    <h2>Welcome to Starwarsbnb</h2>
+    <h4 id='login-or-signup'>Log in</h4>
+    <h2 id='welcome'>Welcome to Starwarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>
-        {/* {errors.map(error => <li key={error}>{error}</li>)} */}
-        {errors.map(error => <li key={error}>{error.message}</li>)}
+        {errors.map(error => <li key={error}>{error}</li>)}
+        {/* {errors.map(error => <li key={error}>{error.message}</li>)} */}
       </ul>
         <input className='user-auth-entry'
           type="text"
@@ -77,9 +78,12 @@ function LoginForm({onSubmit}) {
         />
       <br></br>
       <button className='user-auth-button' type="submit">Continue</button>
-      <br></br>
+      {/* <br></br> */}
     </form>
       <button onClick={handleDemo} className='demo-button' type='submit'>Demo Log in</button>
+      <div id='or-container'><p>          </p>or<p>        </p></div>
+      <a id='github-link-container'href='https://github.com/cruse-charles'><div id='github-button'>GitHub</div></a>
+      <a id='linkedin-link-container'href='https://www.linkedin.com/in/charles-cruse-2ba72ab6/'><div id='linkedin-button'>LinkedIn</div></a>
     </>
   );
 }

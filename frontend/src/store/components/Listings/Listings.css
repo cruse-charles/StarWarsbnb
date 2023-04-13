@@ -17,6 +17,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    list-style-type: none;
 }
 
 #listings-grid{
@@ -29,13 +30,13 @@ time, mark, audio, video {
     font-size: 14px;
 
 
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 }
 
 #listing-card {
     /* border: 2px solid black; */
-    height: 360px;
+    height: 430px;
     text-align: left;
     /* border-radius: 20px; */
     overflow: hidden;
@@ -70,7 +71,7 @@ time, mark, audio, video {
     #listings-grid{
         padding-left: 80px;
         padding-right: 80px;
-        padding-top: 15px
+        padding-top: 15px;
     }
 
 }
@@ -80,35 +81,53 @@ div:link {
 }
 
 #carousel-container{
-    height: 100px;
+    height: 95px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    border-bottom: 1px solid lightgray;
+    /* border-bottom: 1px solid lightgray; */
+    box-shadow: 0 1px 4px lightgray;
     
 }
 
 .icon-container {
     position: relative;
-    top: 10px;
-    border: 1px solid black;
-    height: 78px; 
+    height: 100%; 
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    justify-content: center;
 }
+
 
 .icon-container .fa-solid {
     position: relative;
-    height: 30px;
-    width: 30px;
-    top: 40px;
+    top: 10px;
+    /* height: 30px;
+    width: 30px; */
     color: gray
 }
+
+
+.icon-container:hover{
+    border-bottom: 2px solid lightgray;
+}
+
 
 .icon-container p {
     position: relative;
     top: 25px;
     color: gray
+}
+
+.icon-container:hover .fa-solid{
+    color: black;
+}
+
+.icon-container:hover p{
+    color: black;
+}
+
+li {
+    color: red;
 }

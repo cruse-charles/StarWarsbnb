@@ -59,10 +59,15 @@ export const createReservation = (reservation) => async(dispatch) => {
         body: JSON.stringify(reservation),
         headers: {'Content-Type': 'application/json'}
     })
-debugger
+// debugger
     const data = await response.json()
-    dispatch(receiveReservation(data))
-debugger
+    if(typeof(data[0]) === 'string'){
+// debugger
+        throw data
+    } else {
+        dispatch(receiveReservation(data))
+    }
+// debugger
 }
 
 export const updateReservation = (reservation) => async(dispatch) => {

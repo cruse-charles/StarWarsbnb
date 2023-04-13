@@ -39,8 +39,10 @@ function ProfileButton() {
   if(!sessionUser) {
     sessionLinks = (
       <>
-        <div><LoginFormModal /></div>
-        <div><SignupFormModal /></div>
+        {/* <div id='login-signup-menu'> */}
+          <div id='login-button'><LoginFormModal /></div>
+          <div id='signup-button'><SignupFormModal /></div>
+        {/* </div> */}
       </>
     );
   }
@@ -50,10 +52,10 @@ function ProfileButton() {
     userButtons = (
       <>
       <div>
-        <div onClick={routeChange}>Trips</div><br></br>
+        <div onClick={routeChange} id='trips-button'>Trips</div><br></br>
         {/* <div>Trips</div><br></br> */}
-        <div>Wishlists</div><br></br>
-        <div onClick={logout}>Log Out</div>
+        {/* <div id='wishlists-button'>Wishlists</div><br></br> */}
+        <div onClick={logout} id='logout-button'>Log Out</div>
       </div>
       </>
     )
@@ -63,15 +65,17 @@ function ProfileButton() {
   return (
     <>
       <button className='account-button' onClick={toggleMenu}>
-        <i id='hamburger' className="fa-sharp fa-solid fa-bars" />
-        <i id='account-icon' className="fa-solid fa-user" />
+        <i id='hamburger' className="fa-sharp fa-solid fa-bars fa-lg" />
+        <i id='account-icon' className="fa-solid fa-user fa-lg" />
       </button>
       {menuState && (
-        <div className="profile-dropdown">
-          <div>{sessionLinks}</div>
-          <div>
+        <div id="profile-dropdown">
+          {/* <div> */}
+            {sessionLinks}
+          {/* </div> */}
+          {/* <div> */}
             {userButtons}
-          </div>
+          {/* </div> */}
         </div>
       )}
     </>

@@ -12,7 +12,8 @@ const ListingIndexItem = ({listing}) => {
 
     return(
         <div id='listing-card' onClick={routeChange}>
-            <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
+            {/* <img id='listing-profile-photo'src={testPhoto} alt='listing'/> */}
+            <img id='listing-profile-photo'src={listing?.photoUrls?.[0]} alt='listing'/>
             <div id='listing-city-country'>{listing.city}, {listing.country}</div>
             <div>Hosted by...</div>
             <div>Apr 15- Apr 18</div>

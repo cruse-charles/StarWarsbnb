@@ -1,38 +1,48 @@
 #navigation-wrapper{
     border-bottom: 1px solid lightgray;
     font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
 }
 
 .navigation-bar {
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
+    /* flex-direction: row; */
     justify-content: space-between;
-    position: sticky;
     /* border-bottom: 1px solid lightgray; */
     height: 80px;
-    width: 75%;
+    width: 85%;
     align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+    z-index: 1;
 }
 
 
 
-.profile-dropdown {
+#profile-dropdown {
     font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
     /* z-index: 1; */
+    /* position: relative;
+    left: -130px; */
 }
 
 .account-button {
-    /* position: absolute; */
+    position: fixed;
     border: 1px solid lightgray;
     background-color: white;
     border-radius: 21px;
     height: 42px;
-    /* width: 46px; */
     cursor: pointer;
+
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     transition: box-shadow 0.2s ease;
 }
@@ -41,15 +51,17 @@
     box-shadow: 0 2px 4px gray;
 }
 
-#hamburger{
-    height: 30px;
+#hamburger, #account-icon{
+    /* position: relative;
+    top: 5px; */
+    height: 20px;
     width: 30px;
 }
 
-#account-icon {
+/* #account-icon {
     height: 30px;
     width: 30px;
-}
+} */
 
 /* CANT GET THESE BUTTONS TO CHANGE IN SIZE */
 
@@ -69,14 +81,46 @@
     width: 330px;
 
     align-items: center;
-    align-content: space-around;
+    /* align-content: space-around; */
     font-size: 16px;
     font-weight: bold;
-    
+    justify-content: center;
 
     
 }
 
 #searchbar:hover {
     box-shadow: 0 2px 4px gray;
+}
+
+#profile-button-container{
+    height: 48px;
+    width: 80px;
+}
+
+
+
+#profile-dropdown{
+    /* border: 1px solid black; */
+    font-size: 16px;
+    width: 250%;
+    position: relative;
+    top: 50px;
+    right: 130px;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+#login-button, #signup-button, #logout-button, #trips-button{
+    /* margin-top: 5%; */
+    padding-left: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+#login-button:hover, #signup-button:hover, #logout-button:hover, #trips-button:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }

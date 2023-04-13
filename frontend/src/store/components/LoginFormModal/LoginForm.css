@@ -1,6 +1,6 @@
 #modal-content {
-    height: 640px;
-    width: 560px;
+    height: 680px;
+    width: 570px;
     font-family: 'Montserrat', sans-serif;
     border-radius: 12px;
     display: flex;
@@ -19,24 +19,33 @@
     }
 }
 
-h4 {
+#login-or-signup {
+    /* display: block; */
     border-bottom: 1px solid lightgray;
     width: 100%;
     text-align: center;
     font-weight: bold;
+    padding-bottom: 15px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
-    
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    /* margin: 0; */
 }
 
-h2 {
-    width: 80%;
-    text-align: left;
+#welcome {
+    width: 90%;
+    /* text-align: left; */
+    font-size: 20px;
+    font-weight: bold;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    margin: 30px 0px;
+    /* padding-left: 25px; */
 }
 
 .user-auth-button, .demo-button {
@@ -54,4 +63,59 @@ h2 {
     height: 50px;
     border: 1px solid gray;
     border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.user-auth-button, .demo-button{
+    border: none;
+}
+
+.demo-button{
+    width: 90%
+}
+
+#github-link-container{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: white;
+    text-decoration: none;
+    color: inherit;
+}
+
+#linkedin-link-container{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: white;
+    text-decoration: none;
+    color: inherit;
+}
+
+#linkedin-button, #github-button{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#linkedin-button:hover, #github-button:hover {
+    background-color: lightgray;
+}
+
+#or-container > p {
+    text-decoration: line-through;
 }

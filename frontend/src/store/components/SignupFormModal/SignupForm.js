@@ -38,8 +38,8 @@ function SignupFormPage() {
 
   return (
     <>
-    <h4>Sign up</h4>
-    <h2>Welcome to StarWarsbnb</h2>
+    <h4 id='login-or-signup'> Sign up</h4>
+    <h2 id ='welcome'>Welcome to StarWarsbnb</h2>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}

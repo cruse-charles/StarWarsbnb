@@ -1,0 +1,13 @@
+#reservation-button {
+    cursor: pointer;
+    background-color: rgb(229, 30, 85);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    width: 90%;
+    height: 48px;
+    font-size: 15px;
+    font-weight: bold;
+    align-self: center;
+}
