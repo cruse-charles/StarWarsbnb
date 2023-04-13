@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
+    get 'listings/search', to: "listings#search"
     resources :users, only: [:create, :show] do 
       resources :reservations, only:[:index]
     end

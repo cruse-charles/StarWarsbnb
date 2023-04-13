@@ -4,12 +4,14 @@ import session from './session';
 import listings from './listings'
 import reviews from './reviews'
 import reservations from './reservations'
+import searchReducer from './search'
 
 const rootReducer = combineReducers({
   session,
   listings,
   reviews,
-  reservations
+  reservations,
+  searchResults: searchReducer
   // this is what names the keys in our state
 });
   

@@ -4,6 +4,7 @@ import './Navigation.css';
 import airbnbLogo from '../../../../src/assets/airbnb-logo.png'
 import { createContext, useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import SearchBar from './SearchBar';
 
 export const menuContext = createContext()
 
@@ -27,7 +28,8 @@ function Navigation(){
           </Link>
         </div>
         <div id='searchbar'>
-          Anywhere | Anyweek | Add Guests
+          {/* Anywhere | Anyweek | Add Guests */}
+          <SearchBar />
         </div>
         <div id='profile-button-container'>
           <ProfileButton />
