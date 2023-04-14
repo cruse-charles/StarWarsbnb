@@ -18,4 +18,11 @@ A user will be able to create a reservation from the calendar set on the listing
 
 ### Reviews
 
-A user will be able to create a review for a listing 
+A user will be able to create a review for a listing on the listing's show page. The review will be added to the page without having to refresh the page. User's will not be able to edit/remove the reviews of other users. When deleting a review, it will also be deleted without having to refresh the page.
+
+
+
+
+
+
+StarWarsbnb was created within a 14 day timeframe. Thank you for checking out my project!
