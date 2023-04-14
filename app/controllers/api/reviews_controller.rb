@@ -41,6 +41,8 @@ class Api::ReviewsController < ApplicationController
       @review.destroy
       # render json: { message: 'Deleted review'}
       # render :show
+    else
+      render json: {errors: 'Must be owner of this review to delete'}
     end
   end
 
