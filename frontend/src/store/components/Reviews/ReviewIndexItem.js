@@ -17,20 +17,17 @@ const ReviewIndexItem = ({review}) => {
 
     const checkUser = () => {
         if(!user) return false
-        // debugger
         if(user.id === review.reviewerId) {
             return true
         } else {
             return false
         }
-        // debugger
     }
-// debugger
+
     return (
         <div className='review-card'>
             <div className='reviewer-name'>
                 <h2>{review.reviewerName}</h2>
-                {/* <p>review date</p> */}
             </div>
             <div>{review.body}</div><br></br>
             
