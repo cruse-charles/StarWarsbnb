@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react"
 import { updateReview, createReview, fetchReview, getReview } from '../../reviews'
+import './ReviewForm.css'
 
 const ReviewForm = () => {
     const dispatch = useDispatch()
@@ -107,10 +108,12 @@ const ReviewForm = () => {
             {createCategoryStars('Accuracy')}
             {createCategoryStars('Location')}
             {createCategoryStars('Value')}
-            <label> Write something for... <br/>
-                <textarea value ={body} onChange={changeBody}></textarea>
+            <br></br>
+            <label>Leave a comment...<br/>
+                <textarea id='review-form-comment'value ={body} onChange={changeBody}></textarea>
             </label>
-            <button onClick={handleSubmit} >Submit</button>
+            <br></br>
+            <button id='review-form-button'onClick={handleSubmit} >Submit</button>
         </form>
         </>
     )

@@ -43,7 +43,7 @@ const ListingShowPage = () => {
                 <div id='information-wrapper'>
                     <div id='information-container'>                        
                         <div id='hosted-by-container'>
-                            <h1>Entire home hosted by {listing.listerId}</h1>
+                            <h1>Entire home hosted by {listing.host}</h1>
                             <h2>4 guests 2 bedrooms 3 beds 1.5 baths</h2>
                         </div>
                         <div id='highlights-wrapper'>
@@ -113,11 +113,12 @@ const ListingShowPage = () => {
                 </div>
                 <div id='reviews-wrapper'>
                     <div id='review-stats'>
-                        <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link><br></br>
+                        <Link id='write-review' to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
                         <h2>Reviews for this airbnb</h2>
+                        <ListingReviews />
                     </div>
                     <div id='reviews-container'>
-                        <ListingReviews />
+                        {/* <ListingReviews /> */}
                     </div>
                 </div>
             </div>

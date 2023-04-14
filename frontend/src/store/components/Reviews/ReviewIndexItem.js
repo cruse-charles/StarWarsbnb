@@ -30,7 +30,7 @@ const ReviewIndexItem = ({review}) => {
         <div className='review-card'>
             <div className='reviewer-name'>
                 <h2>{review.reviewerName}</h2>
-                <p>review date</p>
+                {/* <p>review date</p> */}
             </div>
             <div>{review.body}</div><br></br>
             

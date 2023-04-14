@@ -8,6 +8,7 @@ json.set! :listing do
         :city, 
         :country
     json.photoUrls @listing.photos.map {|photo| photo.url}
+    json.host @listing.lister.username
 end
 
 # json.listing do

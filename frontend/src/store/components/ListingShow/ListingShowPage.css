@@ -197,7 +197,13 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+
+
+        position: sticky;
+        top: 100px;
+
     }
+
 
 
     #form-reservation-container{
@@ -237,7 +243,7 @@
     #icons-container{
         padding-top: 50px;
         height: 380px;
-        border-bottom: 1px solid lightgray;
+        /* border-bottom: 1px solid lightgray; */
     }
 
     #icons-container h2{
@@ -266,10 +272,6 @@
     }
 
 
-    #calendar-container{
-        height: 560px;
-    }
-
     #reviews-wrapper{
         margin-left: 14%;
         margin-right: 14%;
@@ -279,11 +281,18 @@
 
     #review-stats{
         height: 240px;
+        /* display: flex;
+        flex-direction: column; */
     }
 
     #review-stats h2{
         font-size: 20px;
         font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    #write-review{
+        padding-bottom: 40px;
     }
 
     #reviews-container{
