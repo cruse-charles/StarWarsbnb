@@ -14,7 +14,7 @@ const ProfilePage = () => {
             
             {/* Reservations user has made */}
             <div>
-                <div>Booked Trips</div>
+                <h1 id='booked-trips'>Booked Trips</h1>
                 <ReservationIndex />
             </div>
             {/* Reviews the user has made */}

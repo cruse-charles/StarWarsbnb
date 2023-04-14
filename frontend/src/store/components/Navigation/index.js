@@ -27,7 +27,7 @@ function Navigation(){
             <img id='airbnb-logo' src={airbnbLogo} alt='logo'/>
           </Link>
         </div>
-        <div id='searchbar'>
+        <div id='searchbar-container'>
           {/* Anywhere | Anyweek | Add Guests */}
           <SearchBar />
         </div>

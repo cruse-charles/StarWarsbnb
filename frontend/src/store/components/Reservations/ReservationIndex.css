@@ -1,0 +1,74 @@
+#listing-reservation-container{
+    /* border: 1px solid red; */
+    margin: 0 14%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#reservation-card{
+    /* border: 1px solid purple; */
+    height: 300px;
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    margin: 40px 0px ;
+    border-radius: 15px;
+}
+
+#reservation-photo{
+    height: 100%;
+    width: 400px;
+    border-radius: 15px;
+}
+
+#reservation-card-information-wrapper{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#information-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#reservastion-listing-title{
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    width: 80%;
+    /* display: flex; */
+    /* justify-content: center; */
+    text-align: center;
+    margin: auto;
+}
+
+#reservation-listing-dates{
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    
+}
+
+#edit-remove-container{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 70%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#edit, #remove{
+    text-decoration: none;
+    color: black;
+}
+
+
+#booked-trips{
+    margin-left: 14%;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+
+}

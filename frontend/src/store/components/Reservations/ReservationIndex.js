@@ -3,6 +3,7 @@ import { fetchReservations, getUserReservations } from "../../reservations"
 import ReservationIndexItem from "./ReservationIndexItem"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect } from "react"
+import './ReservationIndex.css'
 
 
 
@@ -20,7 +21,7 @@ const ReservationIndex = () => {
         <>
         <div id='reservation-wrapper'>
             <div id='listing-reservation-container'>
-                <div>Reservation Container</div>
+                {/* <div>Reservation Container</div> */}
                 {
                     reservations.map((reservation) => {
                         return <ReservationIndexItem reservation = {reservation} key={reservation.id} />

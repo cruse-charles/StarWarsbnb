@@ -30,9 +30,9 @@ const SearchBar = () => {
 
     return (
         <>
-            <input type='text' onChange={handleSearch} placeholder='Search...'></input>
+            <input id='searchbar' type='text' onChange={handleSearch} placeholder='Anywhere | Anyweek | Add Guests'></input>
             {/* this onChange lets us do a search for everything we type for the dropdown */}
-            <button onClick={handleSearchSubmit}>search</button>
+            <button id='search-button' onClick={handleSearchSubmit}><i className="fa-solid fa-magnifying-glass fa-lg"></i></button>
         </>
     )
 

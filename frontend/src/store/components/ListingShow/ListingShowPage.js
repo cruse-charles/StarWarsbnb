@@ -89,17 +89,17 @@ const ListingShowPage = () => {
                             <h2>What this place offers</h2>
                             <div id='icons-list'>
                                 <div className='offered-icons'>
-                                    <i class="fa-solid fa-kitchen-set fa-lg"></i>
+                                    <i className="fa-solid fa-kitchen-set fa-lg"></i>
                                     <p>Kitchen</p>
                                 </div>
-                                <div className='offered-icons'><i class="fa-solid fa-wifi fa-lg"></i>Wifi</div>
-                                <div className='offered-icons'><i class="fa-solid fa-bath fa-xl"></i>Bathtub</div>
-                                <div className='offered-icons'><i class="fa-solid fa-hot-tub-person fa-lg"></i>Hottub</div>
-                                <div className='offered-icons'><i class="fa-solid fa-water-ladder fa-lg"></i>Pool</div>
-                                <div className='offered-icons'><i class="fa-solid fa-tv fa-lg"></i>TV</div>
-                                <div className='offered-icons'><i class="fa-solid fa-paw fa-xl"></i>Pets Allowed</div>
-                                <div className='offered-icons'><i class="fa-solid fa-car fa-lg"></i>Parking</div>
-                                <div className='offered-icons'><i class="fa-solid fa-snowflake fa-lg"></i>Air Conditioning</div>
+                                <div className='offered-icons'><i className="fa-solid fa-wifi fa-lg"></i>Wifi</div>
+                                <div className='offered-icons'><i className="fa-solid fa-bath fa-xl"></i>Bathtub</div>
+                                <div className='offered-icons'><i className="fa-solid fa-hot-tub-person fa-lg"></i>Hottub</div>
+                                <div className='offered-icons'><i className="fa-solid fa-water-ladder fa-lg"></i>Pool</div>
+                                <div className='offered-icons'><i className="fa-solid fa-tv fa-lg"></i>TV</div>
+                                <div className='offered-icons'><i className="fa-solid fa-paw fa-xl"></i>Pets Allowed</div>
+                                <div className='offered-icons'><i className="fa-solid fa-car fa-lg"></i>Parking</div>
+                                <div className='offered-icons'><i className="fa-solid fa-snowflake fa-lg"></i>Air Conditioning</div>
                                 
                             </div>
                         </div>
@@ -114,7 +114,7 @@ const ListingShowPage = () => {
                 <div id='reviews-wrapper'>
                     <div id='review-stats'>
                         <Link to={`/listings/${listingId}/reviews/new`}>Write a review!</Link><br></br>
-                        <h2>review stats</h2>
+                        <h2>Reviews for this airbnb</h2>
                     </div>
                     <div id='reviews-container'>
                         <ListingReviews />

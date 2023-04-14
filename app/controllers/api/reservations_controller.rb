@@ -23,6 +23,7 @@ class Api::ReservationsController < ApplicationController
             render :show
         else
             render json: @reservation.errors.full_messages
+            # return errors.add(:error, 'Must login') 
         end
     end
 

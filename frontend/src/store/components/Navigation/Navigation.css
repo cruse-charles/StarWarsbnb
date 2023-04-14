@@ -72,6 +72,16 @@
 }
 
 #searchbar{
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    width: 250px;
+    font-weight: bold;
+    height: 95%;
+    /* background-color:; */
+}
+
+#searchbar-container{
     display: flex;
     border: 1px solid lightgray;
     background-color: white;
@@ -84,12 +94,25 @@
     /* align-content: space-around; */
     font-size: 16px;
     font-weight: bold;
-    justify-content: center;
+    justify-content: space-around;
 
     
 }
 
-#searchbar:hover {
+#search-button{
+    border-radius: 100px;
+    background-color:red;
+    height: 40px;
+    width: 40px;
+    border: none;
+    /* padding-right: 5px; */
+}
+
+.fa-magnifying-glass{
+    color:white;
+}
+
+#searchbar-container:hover {
     box-shadow: 0 2px 4px gray;
 }
 

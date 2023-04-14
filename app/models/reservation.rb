@@ -21,12 +21,19 @@ class Reservation < ApplicationRecord
 
 
     def no_overlap?
-        reservations = Reservation.where('start_date <= ? AND ? <= end_date', self.start_date, self.start_date).or(
+        # reservations = Reservation.where('start_date <= ? AND ? <= end_date', self.start_date, self.start_date).or(
+        #     Reservation.where('start_date <= ? AND ? <= end_date', self.end_date, self.end_date).or(
+        #     Reservation.where('? < start_date AND ? > end_date', self.start_date, self.end_date).and(
+        #     Reservation.where('listing_id = ?', self.listing_id))))
+
+        reservations = 
+            Reservation.where('listing_id = ?', self.listing_id).and((
+            Reservation.where('start_date <= ? AND ? <= end_date', self.start_date, self.start_date).or(
             Reservation.where('start_date <= ? AND ? <= end_date', self.end_date, self.end_date).or(
-            Reservation.where('? < start_date AND ? > end_date', self.start_date, self.end_date).and(
-            Reservation.where('listing_id = ?', self.listing_id))))
+            Reservation.where('? < start_date AND ? > end_date', self.start_date, self.end_date)))))
         
         if reservations.length != 0
+            # return reservations
             return errors.add(:error, '- Date range taken')
             # return errors.add('date range taken')
         else

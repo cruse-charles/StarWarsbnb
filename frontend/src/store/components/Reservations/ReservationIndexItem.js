@@ -35,14 +35,22 @@ const ReservationIndexItem = ({reservation}) => {
 
     return(
         <div id='reservation-card'>
-            <div>{reservation.listingTitle}</div>
-            {/* <div>Reservation Card</div> */}
-            {/* <div>{reservation.reserverId}</div> */}
-            {/* <div>{reservation.startDate} - {reservation.endDate}</div> */}
-            <div>{formattedStartDate} - {formattedEndDate}</div>
-            <Link to={`/reservations/${reservation.id}/edit`}>Edit</Link>
-            {/* DOES IT MATTER WHAT THE EDIT IS? SHOULD I STICK TO A USER/RESERVATIONS/EDIT? THIS IS GONNA BE A BITCH TO MAKE */}
-            <Link onClick={handleDelete}>Remove</Link>
+            <div id='photo-container'>
+                <img id='reservation-photo' src={reservation.listingPhoto?.[0]}></img>
+            </div>
+            <div id='reservation-card-information-wrapper'>
+                <div id='information-container'>
+                    <div id='reservastion-listing-title'><h1>{reservation.listingTitle}</h1></div>
+                    <div id='reservation-listing-dates'>{formattedStartDate}<br></br> - <br></br>{formattedEndDate}</div>
+                    <div id='edit-remove-container'>
+                        <Link id='edit' to={`/reservations/${reservation.id}/edit`}>Edit your reservation</Link>
+                        <Link id='remove' onClick={handleDelete}>Delete your reservation</Link>
+                    </div>
+                </div>
+                {/* <div id='description-container'>
+                    {reservation.listingDescription}
+                </div> */}
+            </div>
         </div>
     )
 

@@ -11,3 +11,17 @@
     font-weight: bold;
     align-self: center;
 }
+
+#disabled-reservation-button {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    width: 90%;
+    height: 48px;
+    font-size: 15px;
+    font-weight: bold;
+    align-self: center;
+}

@@ -8,5 +8,7 @@
         :end_date, 
         :num_guests
     json.listingTitle reservation.listing.title
+    json.listingPhoto reservation.listing.photos.map {|photo| photo.url}
+    json.listingDescription reservation.listing.description
     end
 end

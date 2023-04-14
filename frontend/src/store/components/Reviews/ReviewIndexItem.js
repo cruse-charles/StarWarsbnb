@@ -35,11 +35,11 @@ const ReviewIndexItem = ({review}) => {
             <div>{review.body}</div><br></br>
             
             {checkUser() && (<div id='edit-remove-container'>
-                <Link to={`/listings/${listingId}/reviews/${review.id}/edit`}>
-                    Edit
+                <Link id='edit' to={`/listings/${listingId}/reviews/${review.id}/edit`}>
+                    Edit your review
                 </Link>
-                <Link onClick={handleDelete}>
-                    Remove
+                <Link id='remove' onClick={handleDelete}>
+                    Delete your review
                 </Link>
             </div>)}
             

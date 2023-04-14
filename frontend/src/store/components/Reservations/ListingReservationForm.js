@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { addDays, format } from 'date-fns';
 import { getReservation, updateReservation } from '../../reservations';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { createReservation } from '../../reservations';
 import './Reservation.css'
 
@@ -21,6 +21,7 @@ const formattedYesterday = new Date(year, month, day - 1);
 
 const ListsingReservationForm = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
     
     const {listingId, reservationId} = useParams()
     let user = useSelector((state) => (state.session.user))
@@ -57,6 +58,18 @@ const ListsingReservationForm = () => {
       }
     }
 
+    let userId
+    if(user){
+        userId = user.id
+    } else {
+        userId = null
+    }
+
+
+    const routeChange = () => {
+        let path = `/users/${userId}`
+        history.push(path)
+    }
 
 
     function handleSubmit(e){
@@ -85,8 +98,12 @@ const ListsingReservationForm = () => {
             newReservation.listing_id = reservation.listingId
             dispatch(updateReservation(newReservation))
         }
+
+        routeChange()
     }
 // debugger
+
+
 
     return (
         <>
@@ -101,7 +118,8 @@ const ListsingReservationForm = () => {
                     onSelect={setRange}
                     disabled={disabledDays}
                 />
-                <button id='reservation-button' onClick={handleSubmit}>Submit</button>
+                {/* <button id='reservation-button' onClick={handleSubmit}>Submit</button> */}
+                {userId === null ? <button disabled className='disabled-button' id='disabled-reservation-button'>Submit</button> : <button id='reservation-button' onClick={handleSubmit}>Submit</button> }
             </div>
         </>
     )
