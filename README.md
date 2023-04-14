@@ -21,6 +21,9 @@ A user will be able to create a reservation from the calendar set on the listing
 A user will be able to create a review for a listing on the listing's show page. The review will be added to the page without having to refresh the page. User's will not be able to edit/remove the reviews of other users. When deleting a review, it will also be deleted without having to refresh the page.
 
 
+### Search
+
+Users will be able to click in the search bar located at the top of the page and search by title of listings. When hitting the search icon, a list of matching listings will appear that the user will be able to click to lead to that listing's show page.
 
 
 
