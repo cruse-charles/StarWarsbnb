@@ -14,6 +14,9 @@ StarWarsbnb is a clone of the Airbnb desktop website. Airbnb is a website which 
 ### Reservations
 
 A user will be able to create a reservation from the calendar set on the listing's show page. This calendar will have functionality that prevents a user from creating a reservation for a listing that has overlapping dates with another reservation from the same or a different user. Users will be allowed to edit or delete their reservation as well.
+![calendar](https://user-images.githubusercontent.com/121701827/232132868-d3fad782-76a2-4d2d-91de-22f9b0465c27.PNG)
+
+
 
 
 ### Reviews
