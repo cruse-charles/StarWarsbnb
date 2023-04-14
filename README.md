@@ -17,12 +17,31 @@ A user will be able to create a reservation from the calendar set on the listing
 
 ![calendar](https://user-images.githubusercontent.com/121701827/232132868-d3fad782-76a2-4d2d-91de-22f9b0465c27.PNG)
 
+    def no_overlap?
+
+        reservations = 
+            Reservation.where('listing_id = ?', self.listing_id).and((
+            Reservation.where('start_date <= ? AND ? <= end_date', self.start_date, self.start_date).or(
+            Reservation.where('start_date <= ? AND ? <= end_date', self.end_date, self.end_date).or(
+            Reservation.where('? < start_date AND ? > end_date', self.start_date, self.end_date)))))
+        
+        if reservations.length != 0
+            return errors.add(:error, '- Date range taken')
+        else
+            return true
+        end
+    end
 
 
 
 ### Reviews
 
 A user will be able to create a review for a listing on the listing's show page. The review will be added to the page without having to refresh the page. User's will not be able to edit/remove the reviews of other users. When deleting a review, it will also be deleted without having to refresh the page.
+
+![reviews](https://user-images.githubusercontent.com/121701827/232134038-52dbe3de-cefa-4c65-b6a3-274cd9bb8030.PNG)
+
+
+
 
 
 ### Search
