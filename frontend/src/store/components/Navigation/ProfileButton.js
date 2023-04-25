@@ -41,6 +41,7 @@ function ProfileButton() {
       <>
         {/* <div id='login-signup-menu'> */}
           <div id='login-button'><LoginFormModal /></div>
+          {/* <div onClick={toggleMenu} id='login-button'><LoginFormModal /></div> */}
           <div id='signup-button'><SignupFormModal /></div>
         {/* </div> */}
       </>

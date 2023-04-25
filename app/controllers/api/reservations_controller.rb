@@ -20,6 +20,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.new(reservation_params)
 
         if @reservation.save
+        # if @reservation.save!
             render :show
         else
             render json: @reservation.errors.full_messages

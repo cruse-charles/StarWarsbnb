@@ -1,7 +1,7 @@
 class Reservation < ApplicationRecord
     require 'date'
     validates :reserver_id, :listing_id, :num_guests, :start_date, :end_date, presence: true
-    validate :no_overlap?, on: :create
+    validate :no_overlap?, on: [:create, :update]
 
 
 
@@ -31,6 +31,9 @@ class Reservation < ApplicationRecord
         if reservations.length != 0
             return errors.add(:error, '- Date range taken')
         else
+            # return true
+# debugger
+            # errors.add(:message, '- Success!' )
             return true
         end
     end

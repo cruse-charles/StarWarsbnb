@@ -41,6 +41,7 @@ const ListsingReservationForm = () => {
             setStartDate(range.from)
             setEndDate(range.to)
             // setEditListingId(listingId)
+            setErrors([])
         }
     }, [range, dispatch])
 
@@ -81,27 +82,47 @@ const ListsingReservationForm = () => {
         }
         newReservation.listing_id = listingId
         newReservation.reserver_id = user.id
-// debugger
+
         if(!reservationId){
-            dispatch(createReservation(newReservation))
+            // dispatch(createReservation(newReservation))
+            //     .catch(async (res) => {
+            //         let data = await res[0]
+            //         if (data){
+            //             setErrors([data]);
+            //             // setErrors([data.start_date]);
+            //             //double check what seterrors expects as a arg
+            //         }
+            //     })
+
+                dispatch(createReservation(newReservation))
+                .then(routeChange)
                 .catch(async (res) => {
                     let data = await res[0]
                     if (data){
-// debugger
                         setErrors([data]);
                         // setErrors([data.start_date]);
                         //double check what seterrors expects as a arg
                     }
                 })
+
+
         } else {
             newReservation.id = reservationId
             newReservation.listing_id = reservation.listingId
             dispatch(updateReservation(newReservation))
+            // .catch(async (res) => {
+            //     let data = await res[0]
+            //     if (data){
+            //         setErrors([data]);
+            //         // setErrors([data.start_date]);
+            //         //double check what seterrors expects as a arg
+            //     }
+            // })
+            // routeChange()
         }
-
-        routeChange()
+        
+        // routeChange()
     }
-// debugger
 
 
 
