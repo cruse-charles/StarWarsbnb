@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import LoginForm from './LoginForm';
 // import { menuContext } from '../Navigation';
+// import { useContext } from "react";
 
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
   // const {menuState, setMenuState} = useContext(menuContext) 
 
   const handleClick = () => {
+// debugger
     setShowModal(true)
+    // .then(() => {setMenuState(false)})
     // setMenuState(false)
   }
 

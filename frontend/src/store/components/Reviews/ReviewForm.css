@@ -1,8 +1,48 @@
 #review-form-button{
-    width: 170px;
+    cursor: pointer;
+    background-color: rgb(229, 30, 85);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    width: 310px;
+    font-size: 20px;
 }
 
 #review-form-comment{
     height: 100px;
     width: 300px;
+}
+
+
+
+#individual-review-container label{
+    /* position: relative; */
+    content: '\f005';
+    cursor: pointer;
+    color: rgb(229, 30, 85);
+    /* color: lightgray; */
+    opacity: 1;
+    padding-bottom: 20px;
+    
+}
+
+h2{
+    font-size: 20px;
+    padding-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#review-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+textarea{
+    font-family: 'Montserrat', sans-serif;
 }

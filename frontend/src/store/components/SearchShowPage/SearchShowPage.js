@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Navigation from '../Navigation';
 import ListingIndexItem from '../Listings';
 import './SearchShowPage.css'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Search = () => {
     const dispatch = useDispatch();
@@ -20,12 +21,12 @@ const Search = () => {
     }, []);
     
     const searchResults = useSelector((state) => state.searchResults );
-    
+    // debugger
 
-    const routeChange = () => {
-        let path = `/listings/${searchResults.id}`
-        history.push(path)
-    }
+    // const routeChange = () => {
+    //     let path = `/listings/${searchResults.id}`
+    //     history.push(path)
+    // }
 
 
     return(
@@ -34,13 +35,16 @@ const Search = () => {
         <div id='listings-grid'>
             {Object.values(searchResults).map((ele) => {
                 return (
-                    <div id='listing-card' onClick={routeChange}>
-                        <img id='listing-profile-photo'src={ele?.photoUrls?.[0]} alt='listing'/>
-                        <div id='listing-city-country'>{ele.city}, {ele.country}</div>
-                        <div>Hosted by a superhost!</div>
-                        <div>Apr 15- Apr 18</div>
-                        <div id='listing-price-line'><span id='listing-price'>${ele.price}</span> night</div>
-                    </div>
+                    <a href={`/listings/${ele.id}`}>
+                        {/* <div id='listing-card' onClick={routeChange}> */}
+                        <div id='listing-card'>
+                            <img id='listing-profile-photo'src={ele?.photoUrls?.[0]} alt='listing'/>
+                            <div id='listing-city-country'>{ele.city}, {ele.country}</div>
+                            <div>Hosted by a superhost!</div>
+                            <div>Apr 15- Apr 18</div>
+                            <div id='listing-price-line'><span id='listing-price'>${ele.price}</span> night</div>
+                        </div>
+                    </a>
                 )
             })}            
         </div>

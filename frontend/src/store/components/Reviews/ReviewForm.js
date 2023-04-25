@@ -47,22 +47,42 @@ const ReviewForm = () => {
     const createCategoryStars = (category) => {
 
         return (
-            <div>
+            // <div>
+            //     <h2>{category}</h2>
+            //     <label> 1
+            //         <input type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 2
+            //         <input type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 3
+            //         <input type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 4
+            //         <input type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 5
+            //         <input type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            // </div>
+
+
+            <div id='individual-review-container'>
                 <h2>{category}</h2>
-                <label> 1
-                    <input type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                <label className="fa-solid fa-star fa-xl">1 
+                    <input className="star" type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
-                <label> 2
-                    <input type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                <label className="fa-solid fa-star fa-xl">2 
+                    <input className="star" type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
-                <label> 3
-                    <input type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                <label className="fa-solid fa-star fa-xl">3 
+                    <input className="star" type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
-                <label> 4
-                    <input type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                <label className="fa-solid fa-star fa-xl">4 
+                    <input className="star" type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
-                <label> 5
-                    <input type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                <label className="fa-solid fa-star fa-xl">5 
+                    <input className="star" type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
             </div>
         )
@@ -100,7 +120,7 @@ const ReviewForm = () => {
     return (
         <>
         {/* <Link to={`/listings/${listing.id}`}>Back</Link> */}
-        <form>
+        <form id='review-container'>
             <h1>{header}</h1>
             {createCategoryStars('Cleanliness')}
             {createCategoryStars('Communication')}
@@ -109,9 +129,8 @@ const ReviewForm = () => {
             {createCategoryStars('Location')}
             {createCategoryStars('Value')}
             <br></br>
-            <label>Leave a comment...<br/>
+            <h2>Leave a comment...</h2>
                 <textarea id='review-form-comment'value ={body} onChange={changeBody}></textarea>
-            </label>
             <br></br>
             <button id='review-form-button'onClick={handleSubmit} >Submit</button>
         </form>

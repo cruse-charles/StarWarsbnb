@@ -19,7 +19,7 @@ function ListingsIndex() {
     return (
         <>
             <Navigation />
-            <Carousel />
+            {/* <Carousel /> */}
             <div id='listings-grid'>
                 {listings.map((listing) => {
                     return <ListingIndexItem listing={listing} key={listing.id} />

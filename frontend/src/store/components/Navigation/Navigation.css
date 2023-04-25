@@ -4,23 +4,23 @@
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 1;
     width: 100%;
+    /* z-index: 1; */
 }
 
 .navigation-bar {
     display: flex;
     flex-wrap: nowrap;
     /* flex-direction: row; */
-    justify-content: space-between;
+    justify-content: space-around;
     /* border-bottom: 1px solid lightgray; */
     height: 80px;
     width: 85%;
     align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    /* margin-right: 10%; */
     background-color: white;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 
@@ -28,6 +28,7 @@
 #profile-dropdown {
     font-size: 20px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    background-color: white;
     /* z-index: 1; */
     /* position: relative;
     left: -130px; */
@@ -43,6 +44,7 @@
 
     display: flex;
     justify-content: space-between;
+    /* justify-content: center; */
     align-items: center;
     transition: box-shadow 0.2s ease;
 }
@@ -52,8 +54,8 @@
 }
 
 #hamburger, #account-icon{
-    /* position: relative;
-    top: 5px; */
+    position: relative;
+    top: 7px;
     height: 20px;
     width: 30px;
 }
@@ -141,9 +143,20 @@
     padding-left: 5%;
     padding-top: 4%;
     padding-bottom: 4%;
+    background-color: white;
 }
 
 #login-button:hover, #signup-button:hover, #logout-button:hover, #trips-button:hover {
     background-color: lightgray;
     cursor: pointer;
+}
+
+.icon-container{
+    cursor: pointer;
+}
+
+#linkedin-logo, #github-logo{
+    height: 30px;
+    width: 30p;
+    padding-left: 10px;
 }

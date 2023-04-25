@@ -15,7 +15,8 @@ class Api::ListingsController < ApplicationController
   end
 
   def search
-    @listings = Listing.where("lower(title) LIKE ?", "%#{params[:query]}%")
+    @listings = Listing.where("lower(country) LIKE ?", "%#{params[:query]}%").or(
+      Listing.where("lower(city) LIKE ?", "%#{params[:query]}%"))
     #this q is a query string, can call it whatever you want, its everying after the ? in the url
     render :search
   end
