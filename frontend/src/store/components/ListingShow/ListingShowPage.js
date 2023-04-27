@@ -120,7 +120,7 @@ const ListingShowPage = () => {
                 <div id='reviews-wrapper'>
                     <div id='review-stats'>
                         { user &&
-                            <Link id='write-review' to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
+                            <Link id='write-review' to={`/listings/${listingId}/reviews/new`}>Click here to write a review!</Link>
                         }
                         <h2>Reviews for this airbnb</h2>
                         <ListingReviews />

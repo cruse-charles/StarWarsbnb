@@ -113,6 +113,15 @@ const ReviewForm = () => {
         if(reviewId){
             newReview.id = reviewId
             dispatch(updateReview(newReview))
+            .then(routeChange)
+            .catch(async (res) => {
+                // let data = await res[0]
+                let data = await res
+                if (data){
+                    setErrors(data)
+// debugger
+                }
+            })
         } else {
 // debugger
             dispatch(createReview(newReview))

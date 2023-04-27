@@ -80,7 +80,12 @@ export const updateReview = (review) => async(dispatch) => {
     })
 
     const data = await response.json()
-    dispatch(receiveReview(data))
+    if(typeof(data[0]) === 'string'){
+        throw data
+    }else{
+        dispatch(receiveReview(data))
+    }
+
 }
 
 export const deleteReview = (reviewId) => async(dispatch) => {

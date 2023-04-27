@@ -299,10 +299,12 @@
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 20px;
+        margin-top: 10px;
     }
 
     #write-review{
-        padding-bottom: 40px;
+        margin-bottom: 40px;
+        font-size: 20px;
     }
 
     #reviews-container{

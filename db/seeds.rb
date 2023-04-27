@@ -196,8 +196,8 @@
       
       Come and experience the beauty and serenity of this unique location.',
       address: 'Unknown Street',
-      city: 'Ahch-To',
-      country: 'Germany',
+      city: 'Jedi Temple',
+      country: 'Ahch-To',
       latitude: '40.000000',
       longitude: '40.000000',
       price: '55'
