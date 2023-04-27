@@ -13,6 +13,7 @@ const ListingShowPage = () => {
     const {listingId} = useParams()
     //this actually needs to match with the url wildcard in the APP route, so that's how we can always get the right one
     const listing = useSelector(getListing(listingId))
+    let user = useSelector((state) => (state.session?.user))
 
     useEffect(() => {
         dispatch(fetchListing(listingId))
@@ -118,7 +119,9 @@ const ListingShowPage = () => {
                 </div>
                 <div id='reviews-wrapper'>
                     <div id='review-stats'>
-                        <Link id='write-review' to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
+                        { user &&
+                            <Link id='write-review' to={`/listings/${listingId}/reviews/new`}>Write a review!</Link>
+                        }
                         <h2>Reviews for this airbnb</h2>
                         <ListingReviews />
                     </div>

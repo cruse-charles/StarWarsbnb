@@ -62,7 +62,7 @@ export const createReservation = (reservation) => async(dispatch) => {
 // debugger
     const data = await response.json()
     if(typeof(data[0]) === 'string'){
-// debugger
+debugger
         throw data
     } else {
         dispatch(receiveReservation(data))

@@ -62,9 +62,14 @@ export const createReview = (review) => async(dispatch) => {
         body: JSON.stringify(review),
         headers: {'Content-Type': 'application/json'}
     })
-
     const data = await response.json()
-    dispatch(receiveReview(data))
+// debugger
+    if(typeof(data[0]) === 'string'){
+        throw data
+    }else{
+// debugger
+        dispatch(receiveReview(data))
+    }
 }
 
 export const updateReview = (review) => async(dispatch) => {

@@ -46,3 +46,7 @@ h1{
 textarea{
     font-family: 'Montserrat', sans-serif;
 }
+
+#rf-errors{
+    color: red;
+}
