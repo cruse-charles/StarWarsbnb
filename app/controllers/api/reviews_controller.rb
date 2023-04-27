@@ -18,6 +18,8 @@ class Api::ReviewsController < ApplicationController
       render :show
     else
       render json: @review.errors.full_messages
+      # return errors.add(:error, 'You must write a comment')
+      # render json: { errors: ['The provided credentials were invalid.'] }
     end
   end
 

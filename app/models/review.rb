@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
     validates :listing_id, :reviewer_id, :body, :cleanliness, :communication, :check_in, :accuracy, :location, :value, presence: true
+    # before_action :require_logged_in, only: [:create, :update, :destroy]
 
     belongs_to :listing,
         primary_key: :id,
