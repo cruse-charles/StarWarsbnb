@@ -3,7 +3,6 @@ import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min
 import { useEffect, useState } from "react"
 import { updateReview, createReview, fetchReview, getReview } from '../../reviews'
 import './ReviewForm.css'
-
 const ReviewForm = () => {
     const dispatch = useDispatch()
     const {listingId, reviewId} = useParams()
@@ -11,7 +10,6 @@ const ReviewForm = () => {
     let review = useSelector(getReview(reviewId))
     const history = useHistory()
     const [errors, setErrors] = useState([])
-
     const [header, setHeader] = useState('Write a review!')
     const [body, setBody] = useState()
     const [cleanliness, setCleanliness] = useState()
@@ -20,7 +18,6 @@ const ReviewForm = () => {
     const [accuracy, setAccuracy] = useState()
     const [location, setLocation] = useState()
     const [value, setValue] = useState()
-
     const changeHandlers = {
         "Cleanliness" : setCleanliness,
         "Communication" : setCommunication,
@@ -29,88 +26,71 @@ const ReviewForm = () => {
         "Location" : setLocation,
         "Value" : setValue
     }
-
     const routeChange = () => {
         let path = `/listings/${listingId}`
         history.push(path)
     }
 
-    //real code below
-    // useEffect(() => {
-    //     if(reviewId){
-    //         dispatch(fetchReview(reviewId))
-    //         setHeader('Edit your review:')
-    //         setBody(review.body)
-    //         setCleanliness(review.cleanliness)
-    //         setCommunication(review.communication)
-    //         setCheckIn(review.checkIn)
-    //         setAccuracy(review.accuracy)
-    //         setLocation(review.location)
-    //         setValue(review.value)
-    //         setErrors([])
-    //     }
-    // }, [dispatch, reviewId])
-    //real code above
-
-
-    //chat code below
     useEffect(() => {
-        if (reviewId) {
-          dispatch(fetchReview(reviewId))
-            .then(review => {
-              setHeader('Edit your review:')
-              setBody(review.body)
-              setCleanliness(review.cleanliness)
-              setCommunication(review.communication)
-              setCheckIn(review.check_in)
-              setAccuracy(review.accuracy)
-              setLocation(review.location)
-              setValue(review.value)
-              setErrors([])
-      
-              // Set the defaultChecked value for each category
-              setCleanlinessStars(createCategoryStars('Cleanliness', review.cleanliness))
-              setCommunicationStars(createCategoryStars('Communication', review.communication))
-              setCheckInStars(createCategoryStars('Check In', review.check_in))
-              setAccuracyStars(createCategoryStars('Accuracy', review.accuracy))
-              setLocationStars(createCategoryStars('Location', review.location))
-              setValueStars(createCategoryStars('Value', review.value))
-            })
+        if(reviewId){
+            dispatch(fetchReview(reviewId))
+            setHeader('Edit your review:')
+            setBody(review.body)
+            setCleanliness(review.cleanliness)
+            setCommunication(review.communication)
+            setCheckIn(review.checkIn)
+            setAccuracy(review.accuracy)
+            setLocation(review.location)
+            setValue(review.value)
+            setErrors([])
         }
     }, [dispatch, reviewId])
-    //chat code above
-
-
-
+    // }, [reviewId])
 
     // const createCategoryStars = (category, rating, setRating) => {
     const createCategoryStars = (category) => {
 
-
         return (
+            // <div>
+            //     <h2>{category}</h2>
+            //     <label> 1
+            //         <input type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 2
+            //         <input type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 3
+            //         <input type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 4
+            //         <input type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            //     <label> 5
+            //         <input type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+            //     </label>
+            // </div>
+
 
             <div id='individual-review-container'>
                 <h2>{category}</h2>
                 <label className="fa-solid fa-star fa-xl">1 
-                {/* ADDED DEFAULT CHECK TO ALL THESE INPUT ACCORDING TO CHAT */}
-                    <input required className="star" type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 1}/>
+                    <input required className="star" type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">2 
-                    <input required className="star" type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 2}/>
+                    <input required className="star" type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">3 
-                    <input required className="star" type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 3}/>
+                    <input required className="star" type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">4 
-                    <input required className="star" type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 4}/>
+                    <input required className="star" type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">5 
-                    <input required className="star" type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 5}/>
+                    <input required className="star" type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
                 </label>
             </div>
         )
     }
-
     function handleSubmit(e){
     // const handleSubmit = (e) => {
         e.preventDefault()
@@ -150,15 +130,11 @@ const ReviewForm = () => {
                 }
             })
         }
-
         // history.push(`/listings/${listingId}`)
-
     }
-
     function changeBody(e){
         setBody(e.target.value)
     }
-
 // debugger
     return (
         <>
@@ -187,6 +163,4 @@ const ReviewForm = () => {
         </>
     )
 }
-
-
 export default ReviewForm
