@@ -35,62 +35,77 @@ const ReviewForm = () => {
         history.push(path)
     }
 
+    //real code below
+    // useEffect(() => {
+    //     if(reviewId){
+    //         dispatch(fetchReview(reviewId))
+    //         setHeader('Edit your review:')
+    //         setBody(review.body)
+    //         setCleanliness(review.cleanliness)
+    //         setCommunication(review.communication)
+    //         setCheckIn(review.checkIn)
+    //         setAccuracy(review.accuracy)
+    //         setLocation(review.location)
+    //         setValue(review.value)
+    //         setErrors([])
+    //     }
+    // }, [dispatch, reviewId])
+    //real code above
+
+
+    //chat code below
     useEffect(() => {
-        if(reviewId){
-            dispatch(fetchReview(reviewId))
-            setHeader('Edit your review:')
-            setBody(review.body)
-            setCleanliness(review.cleanliness)
-            setCommunication(review.communication)
-            setCheckIn(review.checkIn)
-            setAccuracy(review.accuracy)
-            setLocation(review.location)
-            setValue(review.value)
-            setErrors([])
+        if (reviewId) {
+          dispatch(fetchReview(reviewId))
+            .then(review => {
+              setHeader('Edit your review:')
+              setBody(review.body)
+              setCleanliness(review.cleanliness)
+              setCommunication(review.communication)
+              setCheckIn(review.check_in)
+              setAccuracy(review.accuracy)
+              setLocation(review.location)
+              setValue(review.value)
+              setErrors([])
+      
+              // Set the defaultChecked value for each category
+              setCleanlinessStars(createCategoryStars('Cleanliness', review.cleanliness))
+              setCommunicationStars(createCategoryStars('Communication', review.communication))
+              setCheckInStars(createCategoryStars('Check In', review.check_in))
+              setAccuracyStars(createCategoryStars('Accuracy', review.accuracy))
+              setLocationStars(createCategoryStars('Location', review.location))
+              setValueStars(createCategoryStars('Value', review.value))
+            })
         }
     }, [dispatch, reviewId])
-    // }, [reviewId])
+    //chat code above
+
+
+
 
     // const createCategoryStars = (category, rating, setRating) => {
     const createCategoryStars = (category) => {
 
-        return (
-            // <div>
-            //     <h2>{category}</h2>
-            //     <label> 1
-            //         <input type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
-            //     </label>
-            //     <label> 2
-            //         <input type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
-            //     </label>
-            //     <label> 3
-            //         <input type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
-            //     </label>
-            //     <label> 4
-            //         <input type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
-            //     </label>
-            //     <label> 5
-            //         <input type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
-            //     </label>
-            // </div>
 
+        return (
 
             <div id='individual-review-container'>
                 <h2>{category}</h2>
                 <label className="fa-solid fa-star fa-xl">1 
-                    <input required className="star" type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                {/* ADDED DEFAULT CHECK TO ALL THESE INPUT ACCORDING TO CHAT */}
+                    <input required className="star" type='radio' name={category} value='1' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 1}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">2 
-                    <input required className="star" type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                    <input required className="star" type='radio' name={category} value='2' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 2}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">3 
-                    <input required className="star" type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                    <input required className="star" type='radio' name={category} value='3' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 3}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">4 
-                    <input required className="star" type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                    <input required className="star" type='radio' name={category} value='4' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 4}/>
                 </label>
                 <label className="fa-solid fa-star fa-xl">5 
-                    <input required className="star" type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}}/>
+                    <input required className="star" type='radio' name={category} value='5' onChange={(e) => {changeHandlers[category](e.target.value)}} defaultChecked={initialValue === 5}/>
                 </label>
             </div>
         )
