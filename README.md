@@ -9,6 +9,8 @@ StarWarsbnb is a clone of the Airbnb desktop website. Airbnb is a website which 
 * hosting: Render.com
 * Asset Storage: AWS Simple Cloud Storage (S3)
 
+A live link can be accessed here: https://starwarsbnb.onrender.com/
+
 ## MVPs
 
 ### Reservations
