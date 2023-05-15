@@ -39,8 +39,8 @@ const Search = () => {
                     <a href={`/listings/${ele.id}`}>
                         {/* <div id='listing-card' onClick={routeChange}> */}
                         <div id='listing-card'>
-                            {/* <img id='listing-profile-photo'src={ele?.photoUrls?.[0]} alt='listing'/> */}
-                            <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
+                            <img id='listing-profile-photo'src={ele?.photoUrls?.[0]} alt='listing'/>
+                            {/* <img id='listing-profile-photo'src={testPhoto} alt='listing'/> */}
                             <div id='listing-city-country'>{ele.city}, {ele.country}</div>
                             <div>Hosted by a superhost!</div>
                             <div>Apr 15- Apr 18</div>
