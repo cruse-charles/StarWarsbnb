@@ -226,6 +226,8 @@
         padding-top: 38px;
         border-bottom: 1px solid lightgray;
         height: 215px;
+        width: 100%;
+        
     }
 
     #air-cover-container{
@@ -246,6 +248,7 @@
         padding-top: 50px;
         height: 380px;
         /* border-bottom: 1px solid lightgray; */
+        width: 100%;
     }
 
     #icons-container h2{
