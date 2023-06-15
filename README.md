@@ -6,7 +6,7 @@ StarWarsbnb is a clone of the Airbnb desktop website. Airbnb is a website which 
 * Languages: Javascript, Ruby, HTML, CSS
 * Frontend: React-Redux
 * Database: PostgreSQL
-* hosting: Render.com
+* Hosting: Render.com
 * Asset Storage: AWS Simple Cloud Storage (S3)
 
 A live link can be accessed here: https://starwarsbnb.onrender.com/
