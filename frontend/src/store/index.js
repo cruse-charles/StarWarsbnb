@@ -7,12 +7,12 @@ import reservations from './reservations';
 import searchReducer from './search';
 
 const rootReducer = combineReducers({
+  // Names of our keys in state
   session,
   listings,
   reviews,
   reservations,
   searchResults: searchReducer
-  // this is what names the keys in our state
 });
   
 let enhancer;
