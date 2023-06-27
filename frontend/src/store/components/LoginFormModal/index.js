@@ -9,7 +9,6 @@ function LoginFormModal() {
   // const {menuState, setMenuState} = useContext(menuContext) 
 
   const handleClick = () => {
-// debugger
     setShowModal(true)
     // .then(() => {setMenuState(false)})
     // setMenuState(false)

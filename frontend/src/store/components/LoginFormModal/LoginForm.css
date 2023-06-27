@@ -34,18 +34,13 @@ form {
     justify-content: center;
     width: 90%;
     font-family: 'Montserrat', sans-serif;
-    /* margin: 0; */
 }
 
 #welcome {
     width: 90%;
-    /* text-align: left; */
     font-size: 20px;
     font-weight: bold;
-    /* margin-top: 20px;
-    margin-bottom: 20px; */
     margin: 30px 0px;
-    /* padding-left: 25px; */
 }
 
 .user-auth-button, .demo-button {
