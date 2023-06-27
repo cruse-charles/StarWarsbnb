@@ -15,16 +15,12 @@
 }
 
 
-
 #individual-review-container label{
-    /* position: relative; */
     content: '\f005';
     cursor: pointer;
     color: rgb(229, 30, 85);
-    /* color: lightgray; */
     opacity: 1;
     padding-bottom: 20px;
-    
 }
 
 h2{
