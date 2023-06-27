@@ -31,7 +31,7 @@ function Navigation(){
           <a href='https://www.linkedin.com/in/charles-cruse-2ba72ab6/'>
             <img id='linkedin-logo' src={linkedInLogo}/>
           </a>
-          <a href='https://github.com/cruse-charles'>
+          <a href='https://github.com/cruse-charles/StarWarsbnb'>
             <img id='github-logo' src={githubLogo}/>
           </a>
         </div>
