@@ -36,10 +36,8 @@ time, mark, audio, video {
 }
 
 #listing-card {
-    /* border: 2px solid black; */
     height: 430px;
     text-align: left;
-    /* border-radius: 20px; */
     overflow: hidden;
     font-family: inherit;
     cursor: pointer;
@@ -81,15 +79,18 @@ div:link {
     text-decoration: none;
 }
 
-#carousel-container{
+/* Future component carousel css */
+
+/* #carousel-container{
     height: 95px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    /* border-bottom: 1px solid lightgray; */
+    COMMENTED OUT: border-bottom: 1px solid lightgray;
     box-shadow: 0 1px 4px lightgray;
     
-}
+} */
+
 
 .icon-container {
     position: relative;
@@ -104,8 +105,6 @@ div:link {
 .icon-container .fa-solid {
     position: relative;
     top: 10px;
-    /* height: 30px;
-    width: 30px; */
     color: gray
 }
 
