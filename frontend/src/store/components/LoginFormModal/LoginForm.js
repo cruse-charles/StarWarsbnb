@@ -10,7 +10,7 @@ function LoginForm({onSubmit}) {
   const [credential, setCredential] = useState(" Username or Email");
   const [password, setPassword] = useState(" Password");
   const [errors, setErrors] = useState([]);
-  const {menuState, setMenuState} = useContext(menuContext)
+  const {menuState, setMenuState} = useContext(menuContext);
 
   //Dispatching input data for login, removing modal, and sending errors if any
   const handleSubmit = (e) => {
