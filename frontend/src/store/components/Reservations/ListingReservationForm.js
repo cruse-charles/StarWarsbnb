@@ -8,10 +8,10 @@ import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min
 import { createReservation } from '../../reservations';
 import './Reservation.css'
 
-let today = new Date(Date.now())
-let day = today.getDate()
-let month = today.getMonth()
-let year = today.getFullYear()
+let today = new Date(Date.now());
+let day = today.getDate();
+let month = today.getMonth();
+let year = today.getFullYear();
 
 const formattedToday = new Date(year, month, day);
 const formattedYesterday = new Date(year, month, day - 1);
@@ -20,32 +20,34 @@ const formattedYesterday = new Date(year, month, day - 1);
 
 
 const ListsingReservationForm = () => {
-    const dispatch = useDispatch()
-    const history = useHistory()
+    const dispatch = useDispatch();
+    const history = useHistory();
     
-    const {listingId, reservationId} = useParams()
-    let user = useSelector((state) => (state.session.user))
-    const reservation = useSelector(getReservation(reservationId))
-    const disabledDays = [{from: new Date(2020, 1, 1), to: formattedYesterday}]
+    const {listingId, reservationId} = useParams();
+    let user = useSelector((state) => (state.session.user));
+    const reservation = useSelector(getReservation(reservationId));
+    const disabledDays = [{from: new Date(2020, 1, 1), to: formattedYesterday}];
     
-    const [numGuests, setNumGuests] = useState(0)
-    const [startDate, setStartDate] = useState()
-    const [endDate, setEndDate] = useState()
-    const [range, setRange] = useState()
-    const [errors, setErrors] = useState([])
+    const [numGuests, setNumGuests] = useState(0);
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState();
+    const [range, setRange] = useState();
+    const [errors, setErrors] = useState([]);
     // const [editListingId, setEditListingId] = useState()
 
-
+    //If there is an adjustment in date range selection, re-render page
     useEffect(() => {
         if(range){
-            setStartDate(range.from)
-            setEndDate(range.to)
+            setStartDate(range.from);
+            setEndDate(range.to);
             // setEditListingId(listingId)
-            setErrors([])
+            setErrors([]);
         }
-    }, [range, dispatch])
+    }, [range, dispatch]);
 
 
+
+    //Instructions/formatting for date in calendar
     let footer = <p>Please pick the first day.</p>;
     if (range?.from) {
       if (!range.to) {
@@ -59,6 +61,8 @@ const ListsingReservationForm = () => {
       }
     }
 
+
+    //Finding user
     let userId
     if(user){
         userId = user.id
@@ -67,62 +71,50 @@ const ListsingReservationForm = () => {
     }
 
 
+    //Redirecting to user's profile page
     const routeChange = () => {
         let path = `/users/${userId}`
         history.push(path)
     }
 
 
+    //Submitting a reservation based on creating a new reservation or if editing an existing reservation.
+    //Future functionality for guests included
     function handleSubmit(e){
         e.preventDefault()
         const newReservation = {
             num_guests: numGuests,
             start_date: startDate,
             end_date: endDate
-        }
-        newReservation.listing_id = listingId
-        newReservation.reserver_id = user.id
+        };
+        newReservation.listing_id = listingId;
+        newReservation.reserver_id = user.id;
 
         if(!reservationId){
-            // dispatch(createReservation(newReservation))
-            //     .catch(async (res) => {
-            //         let data = await res[0]
-            //         if (data){
-            //             setErrors([data]);
-            //             // setErrors([data.start_date]);
-            //             //double check what seterrors expects as a arg
-            //         }
-            //     })
-
                 dispatch(createReservation(newReservation))
                 .then(routeChange)
                 .catch(async (res) => {
                     let data = await res[0]
                     if (data){
                         setErrors([data]);
+                        //Test for error data format
                         // setErrors([data.start_date]);
-                        //double check what seterrors expects as a arg
-debugger
                     }
                 })
-
-
         } else {
             newReservation.id = reservationId
             newReservation.listing_id = reservation.listingId
             dispatch(updateReservation(newReservation))
-            // .catch(async (res) => {
-            //     let data = await res[0]
-            //     if (data){
-            //         setErrors([data]);
-            //         // setErrors([data.start_date]);
-            //         //double check what seterrors expects as a arg
-            //     }
-            // })
-            // routeChange()
-        }
-        
-        // routeChange()
+            .catch(async (res) => {
+                let data = await res[0];
+                if (data){
+                    setErrors([data]);
+                    // setErrors([data.start_date]);
+                    //double check what seterrors expects as a arg
+                }
+            })
+            routeChange();
+        }        
     }
 
 
@@ -140,7 +132,7 @@ debugger
                     onSelect={setRange}
                     disabled={disabledDays}
                 />
-                {/* <button id='reservation-button' onClick={handleSubmit}>Submit</button> */}
+                {/* MAKE THE LOGIN MODAL POPUP WHEN SELECTING THE DISABLED BUTTON */}
                 {userId === null ? <button disabled className='disabled-button' id='disabled-reservation-button'>Submit</button> : <button id='reservation-button' onClick={handleSubmit}>Submit</button> }
             </div>
         </>
