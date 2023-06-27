@@ -11,26 +11,34 @@ import ListsingReservationForm from "../Reservations/ListingReservationForm";
 const ListingShowPage = () => {
     const dispatch = useDispatch();
     const {listingId} = useParams()
-    //this actually needs to match with the url wildcard in the APP route, so that's how we can always get the right one
+
+    //This should match with the url wildcard in the APP route, to always receive the correct one
     const listing = useSelector(getListing(listingId))
     let user = useSelector((state) => (state.session?.user))
+
 
     useEffect(() => {
         dispatch(fetchListing(listingId))
     }, [listingId, dispatch])
 
-
+    //Should not display if there is no listing in state
     if(!listing) {
         return null;
     }
+
     return (
         <>
         <div id='listings-page'>
+            {/* Navigation bar including links and search bar and sign-in */}
             <Navigation />
+
+            {/* Titles for listing page */}
             <div id='title-container'>
                 <h1 id='title'>{listing.title}</h1><br></br>
                 <div id='location'>{listing.city}, {listing.country}</div>
             </div>
+
+            {/* Photos of listing, commented out portions are kept for testing for website adjustment to not exceed AWS limit */}
             <div id='images-wrapper'>
                 <div id='images-container'>
                     <img className='main-img'src={listing?.photoUrls?.[0]} alt='listing'/>
@@ -45,6 +53,8 @@ const ListingShowPage = () => {
                     <img id='bottom-right-pic'className='small-img' src={testPhoto} alt='listing'/> */}
                 </div>
             </div>
+
+            {/* 'Highlights' for listing */}
             <div id='bottom-portion'>
                 <div id='information-wrapper'>
                     <div id='information-container'>                        
@@ -74,23 +84,17 @@ const ListingShowPage = () => {
                                     <div></div>
                                 </div>
                             </div>
-
-                            {/* <div>
-                                <div className='highlight-container' id='highlight1'><i className="fa-solid fa-location-dot"></i></div>
-                            </div>
-                            <div>
-                                <div className='highlight-container' id='highlight2'><i className="fa-solid fa-calendar"></i></div>
-                            </div> */}
                         </div>
-                        {/* <div id='air-cover-container'>
-                            air cover portion
-                        </div> */}
+
+                        {/* Listing's description pulled from database and properly formatted */}
                         <div id='description-container'>
                             {/* <h2>{listing.description}</h2> */}
                             <div id="lsp_listing_description">
                                 {listing.description.split("\n").map((line) => <h2>{line}<br></br></h2>)}
                             </div>
                         </div>
+
+                        {/* Icons for what is offered at listing */}
                         <div id='icons-container'>
                             <h2>What this place offers</h2>
                             <div id='icons-list'>
@@ -109,24 +113,26 @@ const ListingShowPage = () => {
                                 
                             </div>
                         </div>
-                        {/* <div id='calendar-container'>
-                            Calendar container
-                        </div> */}
                     </div>
-                    {/* <div id='form-reservation-container'> */}
-                        <ListsingReservationForm />
-                    {/* </div> */}
+
+                    {/* Calendar to create reservations for this listing */}
+                    <ListsingReservationForm />
                 </div>
+
+                {/* Writing and Viewing Reviews */}
                 <div id='reviews-wrapper'>
                     <div id='review-stats'>
+
+                        {/* if signed in, can write a rewview */}
                         { user &&
                             <Link id='write-review' to={`/listings/${listingId}/reviews/new`}>Click here to write a review!</Link>
                         }
+
+                        {/* Listing's reviews */}
                         <h2>Reviews for this airbnb</h2>
                         <ListingReviews />
                     </div>
                     <div id='reviews-container'>
-                        {/* <ListingReviews /> */}
                     </div>
                 </div>
             </div>
