@@ -1,4 +1,6 @@
 class Api::SessionsController < ApplicationController
+
+  #Showing current user
   def show
     if current_user
       @user = current_user
@@ -8,6 +10,7 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  #Creating a user based on given inputs
   def create
     @user = User.find_by_credentials(params[:credential], params[:password])
 
@@ -20,6 +23,7 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  #Logging out a user, ending session
   def destroy
     logout!
     render json: { message: 'success' }
