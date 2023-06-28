@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   wrap_parameters include: User.attribute_names + ['password']
   
-  
+  #Creating a user based on params user gives
   def create
     @user = User.new(user_params)
 
@@ -12,9 +12,6 @@ class Api::UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
-
-
-
 
 
 
