@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { deleteReservation } from "../../reservations";
 import { useDispatch } from "react-redux";
+import testPhoto from '../../../../src/assets/l2p1.png';
+
 
 const ReservationIndexItem = ({reservation}) => {
     const dispatch = useDispatch();
@@ -31,8 +33,10 @@ const ReservationIndexItem = ({reservation}) => {
     return(
         <div id='reservation-card'>
             {/* Photo for listing */}
+            {/* Test photo to be kept in for site adjustments and not overusing data */}
             <div id='photo-container'>
-                <img id='reservation-photo' src={reservation.listingPhoto?.[0]}></img>
+                {/* <img id='reservation-photo' src={reservation.listingPhoto?.[0]}></img> */}
+                <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
             </div>
 
             {/* Grabbing reservation information to render */}

@@ -23,7 +23,7 @@ const ProfilePage = () => {
                 <ReservationIndex />
             </div>
 
-            {/* Reviews the user has made */}
+            {/* Reviews the user has made for future features */}
         </div>
         </>
     )
