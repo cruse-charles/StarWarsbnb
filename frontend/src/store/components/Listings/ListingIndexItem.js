@@ -14,8 +14,8 @@ const ListingIndexItem = ({listing}) => {
     return(
         <div id='listing-card' onClick={routeChange}>
             {/* Test photo to be kept in for site adjustments and not overusing data */}
-            <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
-            {/* <img id='listing-profile-photo'src={listing?.photoUrls?.[0]} alt='listing'/> */}
+            {/* <img id='listing-profile-photo'src={testPhoto} alt='listing'/> */}
+            <img id='listing-profile-photo'src={listing?.photoUrls?.[0]} alt='listing'/>
             
             <div id='listing-city-country'>{listing.city}, {listing.country}</div>
             <div>Hosted by a superhost!</div>
