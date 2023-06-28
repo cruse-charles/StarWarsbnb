@@ -1,12 +1,13 @@
 class Api::ReservationsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
     
+    #retrieving all reservations based on user ID
     def index
-        #i think i call it user_id in some other place, does it matter what I call this in the params here?
         @reservations = Reservation.where(reserver_id: params[:user_id])
         render :index
     end
 
+    #Retrieving a specific reservation based on user's id
     def show
         @reservation = Reservation.find_by(id: params[:id])
         if @reservation.reserver_id == current_user.id
@@ -16,18 +17,18 @@ class Api::ReservationsController < ApplicationController
         end
     end
 
+    #Creating a reservation
     def create
         @reservation = Reservation.new(reservation_params)
 
         if @reservation.save
-        # if @reservation.save!
             render :show
         else
             render json: @reservation.errors.full_messages
-            # return errors.add(:error, 'Must login') 
         end
     end
 
+    #Allows for updating of a reservating, finding by resservation ID and checking current user's ID with reserver's ID
     def update
         @reservation = Reservation.find_by(id: params[:id])
 
@@ -42,6 +43,7 @@ class Api::ReservationsController < ApplicationController
         end
     end
 
+    #Deletes a reservation by finding its ID and checking for reserver/current user ID
     def destroy
         @reservation = Reservation.find_by(id: params[:id])
         if @reservation.reserver_id == current_user.id
@@ -53,7 +55,6 @@ class Api::ReservationsController < ApplicationController
 
 
     def reservation_params
-        # params.require(:reservation).permit(:reserver_id, :listing_id, :start_date, :end_date, :num_guests)
         params.require(:reservation).permit(
             :id, 
             :reserver_id, 
