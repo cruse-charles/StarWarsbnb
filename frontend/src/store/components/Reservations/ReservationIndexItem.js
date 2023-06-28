@@ -35,8 +35,8 @@ const ReservationIndexItem = ({reservation}) => {
             {/* Photo for listing */}
             {/* Test photo to be kept in for site adjustments and not overusing data */}
             <div id='photo-container'>
-                <img id='reservation-photo' src={reservation.listingPhoto?.[0]}></img>
-                {/* <img id='listing-profile-photo'src={testPhoto} alt='listing'/> */}
+                {/* <img id='reservation-photo' src={reservation.listingPhoto?.[0]}></img> */}
+                <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
             </div>
 
             {/* Grabbing reservation information to render */}
