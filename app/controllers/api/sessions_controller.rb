@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
     end
   end
 
-  #Creating a user based on given inputs
+  #Creating a session based on given credentials, logging user in
   def create
     @user = User.find_by_credentials(params[:credential], params[:password])
 
