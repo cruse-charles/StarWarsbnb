@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect }  from 'react';
 import { fetchListings, getListings } from "../../listings";
 import { useDispatch, useSelector } from "react-redux";
+import testPhoto from '../../../../src/assets/l2p1.png';
 import './Map.css'
 
 
@@ -37,9 +38,31 @@ const Map = () => {
             }
         )
 
-        const infoWindow = new window.google.maps.InfoWindow();
-        const content = document.createElement("div");
-        content.setAttribute("id", "infoWindowCard")
+        markers.current[listing.id].addListener("click", () => {
+            const infoWindow = new window.google.maps.InfoWindow();
+            const content = document.createElement("div");
+            content.setAttribute("id", "infowindow-listing-card")
+    
+            const photoElement = document.createElement("img")
+            photoElement.src = testPhoto
+            photoElement.setAttribute("id","infowindow-listing-profile-photo")
+            content.appendChild(photoElement)
+    
+            const cityCountryElement = document.createElement("div")
+            cityCountryElement.textContent = `${listing.city}, ${listing.country}`
+            cityCountryElement.setAttribute("id", "infowindow-listing-city-country")
+            content.appendChild(cityCountryElement)
+
+            const priceElement = document.createElement("div")
+            priceElement.textContent = `$${listing.price} night`
+            priceElement.setAttribute("id", "infowindow-listing-price")
+            content.appendChild(priceElement)
+    
+            infoWindow.setContent(content)
+            infoWindow.open(map, markers.current[listing.id])
+
+        })
+
 
     })
   }, [listings, map])

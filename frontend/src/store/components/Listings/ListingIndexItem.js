@@ -19,7 +19,7 @@ const ListingIndexItem = ({listing}) => {
             
             <div id='listing-city-country'>{listing.city}, {listing.country}</div>
             <div>Hosted by a superhost!</div>
-            <div>Apr 15- Apr 18</div>
+            <div>Jul 15 - Jul 18</div>
             <div id='listing-price-line'><span id='listing-price'>${listing.price}</span> night</div>
         </div>
     )

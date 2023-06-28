@@ -2,3 +2,58 @@
     width: 100%;
     height: 700px;
 }
+
+#infowindow-listing-card {
+    height: 285px;
+    width: 330px;
+    /* max-width: 100%; */
+    text-align: left;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+#infowindow-listing-profile-photo {
+    height: 72%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-bottom: 10px;
+}
+
+#infowindow-listing-city-country {
+    position: relative;
+    font-weight: bold;
+    left: 25px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+#infowindow-listing-price {
+    position: relative;
+    font-weight: bold;
+    left: 25px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+
+/* Editing inherit Google Maps Infowindow  */
+.gm-style .gm-style-iw.gm-style-iw-c {
+    box-shadow: 5px 5px 20px gray;
+    padding: 0;
+    border-radius: 20px;
+    /* overflow: auto; */
+}
+
+.gm-style .gm-style-iw.gm-style-iw-c .gm-style-iw-d {
+    overflow: visible !important;
+}
+
+button.gm-ui-hover-effect {
+    left: 15px;
+    top: 15px !important;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,.5) !important;
+}
+
