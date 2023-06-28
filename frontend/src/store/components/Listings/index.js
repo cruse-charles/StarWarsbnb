@@ -5,6 +5,7 @@ import Navigation from "../Navigation";
 import Carousel from "../Carousel";
 import ListingIndexItem from "./ListingIndexItem";
 import "./Listings.css";
+import Map from '../Map/Map'
 
 function ListingsIndex() {
 
@@ -32,6 +33,8 @@ function ListingsIndex() {
                     return <ListingIndexItem listing={listing} key={listing.id} />
                 })}
             </div>
+
+            <Map />
         </>
     )
 }

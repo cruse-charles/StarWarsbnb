@@ -7,7 +7,9 @@
             :address, 
             :city, 
             :country, 
-            :price
+            :price,
+            :latitude,
+            :longitude
         json.photoUrls listing.photos.map {|photo| photo.url}
     end
 end

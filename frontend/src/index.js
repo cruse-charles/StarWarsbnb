@@ -9,6 +9,8 @@ import configureStore from "./store";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import { restoreCSRF } from "./store/csrf";
+import { Wrapper } from '@googlemaps/react-wrapper';
+
 
 const store = configureStore();
 
@@ -21,7 +23,10 @@ if (process.env.NODE_ENV !== "production") {
 const renderApplication = () => {
   ReactDOM.render(
     <React.StrictMode>
-      <Root />
+       <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
+        <Root />
+      </Wrapper>
+
     </React.StrictMode>,
     document.getElementById('root')
   );
