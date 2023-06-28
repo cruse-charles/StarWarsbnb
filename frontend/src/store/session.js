@@ -1,8 +1,10 @@
 import csrfFetch from './csrf';
 
+//Action types to receive/remove reservations
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
+//Action Creator, returns action object for user
 const setCurrentUser = (user) => {
   return {
     type: SET_CURRENT_USER,
@@ -10,6 +12,7 @@ const setCurrentUser = (user) => {
   };
 };
 
+//Action Creator, returns action object removing current user
 const removeCurrentUser = () => {
   return {
     type: REMOVE_CURRENT_USER
@@ -25,7 +28,8 @@ const storeCurrentUser = user => {
     if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
     else sessionStorage.removeItem("currentUser");
 }
-  
+
+//Thunk action creator to login a user from API and add to our state/store
 export const login = ({ credential, password }) => async dispatch => {
     const response = await csrfFetch("/api/session", {
       method: "POST",
@@ -36,7 +40,8 @@ export const login = ({ credential, password }) => async dispatch => {
     dispatch(setCurrentUser(data.user));
     return response;
 };
-  
+
+
 export const restoreSession = () => async dispatch => {
     const response = await csrfFetch("/api/session");
     storeCSRFToken(response);
@@ -45,6 +50,7 @@ export const restoreSession = () => async dispatch => {
     dispatch(setCurrentUser(data.user));
     return response;
 };
+
 
 export const signup = (user) => async (dispatch) => {
     const { username, email, password } = user;
