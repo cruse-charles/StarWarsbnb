@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect }  from 'react';
 import { fetchListings, getListings } from "../../listings";
 import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
-import ListingIndexItem from '../Listings/ListingIndexItem'; // Import the ListingIndexItem component
+import ListingIndexItem from '../Listings/ListingIndexItem';
 import testPhoto from '../../../../src/assets/l2p1.png';
 import white from '../../../../src/assets/white.jpg';
 import black from '../../../../src/assets/black.jpg';
@@ -17,9 +16,9 @@ const Map = () => {
     const mapRef = useRef();
     const markers = useRef({});
     const [showMap, setShowMap] = useState(false);
-    const [currentInfoWindow, setCurrentInfoWindow] = useState(null)
-    const listings = useSelector(getListings)
-    const openInfoWindows = []
+    const [currentInfoWindow, setCurrentInfoWindow] = useState(null);
+    const listings = useSelector(getListings);
+    const openInfoWindows = [];
 
     //Redirect to listing page
     const routeChange = (listing) => {
@@ -30,21 +29,17 @@ const Map = () => {
     
   useEffect(() => {
 
-    //create map
+    //Create map
     setMap(
       new window.google.maps.Map(
-        //have to key into the state actually with refs
+        //have to key into the state with refs
         mapRef.current, {
           center: {lat: 37.7749, lng: -122.4149},
           zoom: 5
         }
       )
-    )
-
-    // return () => {
-    //     window.google.maps.event.clearListeners(map, 'click');
-    //   };
-  }, [])
+    );
+  }, []);
 
 
 
@@ -96,60 +91,14 @@ const Map = () => {
                 const content = document.createElement("div");
                 content.setAttribute("id", "infowindow-listing-card")
 
-                //old
-                // content.addEventListener("click", () => {
-                //     routeChange(listing);
-                // });
-                //old
-
                 
-
-
-                // new
                 // Render ListingIndexItem component inside the info window
                 const root = createRoot(content);
                     root.render(<ListingIndexItem listing={listing} routeChange={routeChange}/>);
 
 
-                // V2
-
-                // const listingIndexItemContainer = document.createElement("div");
-                // const root = createRoot(listingIndexItemContainer);
-                // root.render(<ListingIndexItem listing={listing} routeChange={routeChange} />);
-                // content.appendChild(listingIndexItemContainer);
-
-
-
-                    // Get the element containing the arrow buttons
-                    // const arrowButtonsContainer = content.querySelector(".picture-arrows");
-
-                    // if (arrowButtonsContainer) {
-                    //     // Add a click event listener to the container
-                    //     arrowButtonsContainer.addEventListener("click", (event) => {
-                    //       // Check if the clicked element is an arrow button
-                    //       if (event.target.classList.contains("arrow-button")) {
-                    //         event.stopPropagation();
-                    //       }
-                    //     });
-                    //   }
-
-                    
-                    // const photoElement = content.querySelector('#listing-profile-photo')
-                    // if (photoElement) {
-                    //     photoElement.addEventListener("click", () => {
-                    //         routeChange(listing)
-                    //     })
-                    // }
-
-                    // const listingInfo = content.querySelector('#listing-card-info-container')
-                    // if (listingInfo) {
-                    //     listingInfo.addEventListener("click", () => {
-                    //         routeChange(listing)
-                    //     })
-                    // }
-                // new
         
-                //old
+                //Old method of displaying infoWindow Content
                 //Create each section of information
                 // const photoElement = document.createElement("img")
                 // photoElement.src = testPhoto
@@ -165,7 +114,7 @@ const Map = () => {
                 // priceElement.textContent = `$${listing.price} night`
                 // priceElement.setAttribute("id", "infowindow-listing-price")
                 // content.appendChild(priceElement)
-                //old
+
         
                 //Attach all information to infoWindow
                 infoWindow.setContent(content)
@@ -176,12 +125,7 @@ const Map = () => {
                 setCurrentInfoWindow(infoWindow)
             })
         })
-    
-        // return () => {
-        //     window.google.maps.event.removeListener(clickListener);
-        //   };
     }
-
   }, [listings, map, currentInfoWindow])
 
     return (
