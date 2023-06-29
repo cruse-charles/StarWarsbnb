@@ -159,3 +159,29 @@ li {
 #show-map-button:hover{
     cursor: pointer;
 }
+
+#picture-arrows-container{
+    position: relative;
+    bottom: 40%;
+}
+
+.picture-arrows {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    /* position: relative; */
+    position: absolute;
+    /* top: -40%; */
+    transform: translateY(-40%);
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+#left-arrow{
+    left: 10%;
+}
+
+#right-arrow{
+    left: 85%;
+}
