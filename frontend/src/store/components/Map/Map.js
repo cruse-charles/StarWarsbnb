@@ -21,8 +21,8 @@ const Map = () => {
     const listings = useSelector(getListings)
     const openInfoWindows = []
 
+    //Redirect to listing page
     const routeChange = (listing) => {
-// debugger
         let path = `/listings/${listing.id}`;
         history.push(path);
     }
@@ -30,6 +30,7 @@ const Map = () => {
     
   useEffect(() => {
 
+    //create map
     setMap(
       new window.google.maps.Map(
         //have to key into the state actually with refs
@@ -51,6 +52,7 @@ const Map = () => {
 
     if (map) {
 
+        //Close any open InfoWindow when clicking on map
         const clickListener = map.addListener("click", (event) => {
             if (currentInfoWindow && !currentInfoWindow.getContent().contains(event.target)) {
               currentInfoWindow.close();
@@ -58,6 +60,7 @@ const Map = () => {
             }
         })
     
+        //Create pin data for each listing 
         listings.forEach((listing) => {
             const markerIcon = {
                 url: white,
@@ -65,6 +68,7 @@ const Map = () => {
                 labelOrigin: new window.google.maps.Point(17, 15),
             };
     
+            //Create marking for each listing
             markers.current[listing.id] = new window.google.maps.Marker(
                 {
                     position: {lat: Number(listing.latitude), lng: Number(listing.longitude)},
@@ -78,13 +82,16 @@ const Map = () => {
                 }
             )
     
+            //Add event listener for functionality
             markers.current[listing.id].addListener("click", () => {
                 
+                //close current infowindow
                 if(currentInfoWindow) {
                     currentInfoWindow.close();
                     setCurrentInfoWindow(null);
                 }
 
+                //Create div that will hold information for infoWindow
                 const infoWindow = new window.google.maps.InfoWindow();
                 const content = document.createElement("div");
                 content.setAttribute("id", "infowindow-listing-card")
@@ -100,6 +107,7 @@ const Map = () => {
                 // new
         
                 //old
+                //Create each section of information
                 const photoElement = document.createElement("img")
                 photoElement.src = testPhoto
                 photoElement.setAttribute("id","infowindow-listing-profile-photo")
@@ -116,8 +124,11 @@ const Map = () => {
                 content.appendChild(priceElement)
                 //old
         
+                //Attach all information to infoWindow
                 infoWindow.setContent(content)
                 infoWindow.open(map, markers.current[listing.id])
+
+                //Push infowindow into array to read and close later
                 openInfoWindows.push(infoWindow)
                 setCurrentInfoWindow(infoWindow)
             })
