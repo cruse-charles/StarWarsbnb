@@ -134,12 +134,19 @@ const Map = () => {
                     //   }
 
                     
-                    const photoElement = content.querySelector('#listing-profile-photo')
-                    if (photoElement) {
-                        photoElement.addEveventListner("click", () => {
-                            routeChange(listing)
-                        })
-                    }
+                    // const photoElement = content.querySelector('#listing-profile-photo')
+                    // if (photoElement) {
+                    //     photoElement.addEventListener("click", () => {
+                    //         routeChange(listing)
+                    //     })
+                    // }
+
+                    // const listingInfo = content.querySelector('#listing-card-info-container')
+                    // if (listingInfo) {
+                    //     listingInfo.addEventListener("click", () => {
+                    //         routeChange(listing)
+                    //     })
+                    // }
                 // new
         
                 //old
