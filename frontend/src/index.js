@@ -23,9 +23,9 @@ if (process.env.NODE_ENV !== "production") {
 const renderApplication = () => {
   ReactDOM.render(
     <React.StrictMode>
-       {/* <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}> */}
+       <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
         <Root />
-      {/* </Wrapper> */}
+      </Wrapper>
 
     </React.StrictMode>,
     document.getElementById('root')
@@ -47,11 +47,7 @@ function Root() {
     <ModalProvider>
       <Provider store={store}>
         <BrowserRouter>
-
-        <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
           <App />
-        </Wrapper>
-
         </BrowserRouter>
       </Provider>
     </ModalProvider>
