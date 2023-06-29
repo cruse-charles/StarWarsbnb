@@ -2,17 +2,25 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import testPhoto from '../../../../src/assets/l2p1.png';
 
 
-const ListingIndexItem = ({listing}) => {
+// const ListingIndexItem = ({listing}) => {
+const ListingIndexItem = ({listing, routeChange}) => {
     const history = useHistory();
 
-    //Redirecting to listing's page
-    const routeChange = () => {
-        let path = `/listings/${listing.id}`;
-        history.push(path);
+    const handleClick = () => {
+        if (routeChange) {
+            routeChange(listing)
+        }
     }
 
+    //Redirecting to listing's page
+    // const routeChange = () => {
+    //     let path = `/listings/${listing.id}`;
+    //     history.push(path);
+    // }
+
     return(
-        <div id='listing-card' onClick={routeChange}>
+        // <div id='listing-card' onClick={routeChange}>
+        <div id='listing-card' onClick={handleClick}>
             {/* Test photo to be kept in for site adjustments and not overusing data */}
             <img id='listing-profile-photo'src={testPhoto} alt='listing'/>
             {/* <img id='listing-profile-photo'src={listing?.photoUrls?.[0]} alt='listing'/> */}

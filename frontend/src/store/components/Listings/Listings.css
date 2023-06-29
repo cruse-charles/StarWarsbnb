@@ -155,3 +155,7 @@ li {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
+#show-map-button:hover{
+    cursor: pointer;
+}
