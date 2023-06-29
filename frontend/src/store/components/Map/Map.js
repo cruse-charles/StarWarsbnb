@@ -95,33 +95,69 @@ const Map = () => {
                 const infoWindow = new window.google.maps.InfoWindow();
                 const content = document.createElement("div");
                 content.setAttribute("id", "infowindow-listing-card")
-                content.addEventListener("click", () => {
-                    routeChange(listing);
-                });
+
+                //old
+                // content.addEventListener("click", () => {
+                //     routeChange(listing);
+                // });
+                //old
+
+                
 
 
                 // new
                 // Render ListingIndexItem component inside the info window
-                // const root = createRoot(content);
-                //     root.render(<ListingIndexItem listing={listing} routeChange={routeChange}/>);
+                const root = createRoot(content);
+                    root.render(<ListingIndexItem listing={listing} routeChange={routeChange}/>);
+
+
+                // V2
+
+                // const listingIndexItemContainer = document.createElement("div");
+                // const root = createRoot(listingIndexItemContainer);
+                // root.render(<ListingIndexItem listing={listing} routeChange={routeChange} />);
+                // content.appendChild(listingIndexItemContainer);
+
+
+
+                    // Get the element containing the arrow buttons
+                    // const arrowButtonsContainer = content.querySelector(".picture-arrows");
+
+                    // if (arrowButtonsContainer) {
+                    //     // Add a click event listener to the container
+                    //     arrowButtonsContainer.addEventListener("click", (event) => {
+                    //       // Check if the clicked element is an arrow button
+                    //       if (event.target.classList.contains("arrow-button")) {
+                    //         event.stopPropagation();
+                    //       }
+                    //     });
+                    //   }
+
+                    
+                    const photoElement = content.querySelector('#listing-profile-photo')
+                    if (photoElement) {
+                        photoElement.addEveventListner("click", () => {
+                            routeChange(listing)
+                        })
+                    }
                 // new
         
                 //old
                 //Create each section of information
-                const photoElement = document.createElement("img")
-                photoElement.src = testPhoto
-                photoElement.setAttribute("id","infowindow-listing-profile-photo")
-                content.appendChild(photoElement)
+                // const photoElement = document.createElement("img")
+                // photoElement.src = testPhoto
+                // photoElement.setAttribute("id","infowindow-listing-profile-photo")
+                // content.appendChild(photoElement)
         
-                const cityCountryElement = document.createElement("div")
-                cityCountryElement.textContent = `${listing.city}, ${listing.country}`
-                cityCountryElement.setAttribute("id", "infowindow-listing-city-country")
-                content.appendChild(cityCountryElement)
+                // const cityCountryElement = document.createElement("div")
+                // cityCountryElement.textContent = `${listing.city}, ${listing.country}`
+                // cityCountryElement.setAttribute("id", "infowindow-listing-city-country")
+                // content.appendChild(cityCountryElement)
     
-                const priceElement = document.createElement("div")
-                priceElement.textContent = `$${listing.price} night`
-                priceElement.setAttribute("id", "infowindow-listing-price")
-                content.appendChild(priceElement)
+                // const priceElement = document.createElement("div")
+                // priceElement.textContent = `$${listing.price} night`
+                // priceElement.setAttribute("id", "infowindow-listing-price")
+                // content.appendChild(priceElement)
                 //old
         
                 //Attach all information to infoWindow

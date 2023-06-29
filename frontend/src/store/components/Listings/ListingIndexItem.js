@@ -103,10 +103,13 @@ const ListingIndexItem = ({listing, routeChange}) => {
 
             </div>
             
-            <div id='listing-city-country'>{listing.city}, {listing.country}</div>
-            <div>Hosted by a superhost!</div>
-            <div>Jul 15 - Jul 18</div>
-            <div id='listing-price-line'><span id='listing-price'>${listing.price}</span> night</div>
+            <div id='listing-card-info-container'>
+                <div id='listing-city-country'>{listing.city}, {listing.country}</div>
+                <div>Hosted by a superhost!</div>
+                <div>Jul 15 - Jul 18</div>
+                <div id='listing-price-line'><span id='listing-price'>${listing.price}</span> night</div>
+
+            </div>
         </div>
     )
     //NEW

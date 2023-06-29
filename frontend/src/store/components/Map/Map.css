@@ -4,8 +4,9 @@
 }
 
 #infowindow-listing-card {
-    height: 285px;
-    width: 330px;
+    /* height: 285px; */
+    height: 400px;
+    width: 350px;
     /* max-width: 100%; */
     text-align: left;
     overflow: hidden;
