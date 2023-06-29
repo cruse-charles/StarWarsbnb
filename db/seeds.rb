@@ -52,9 +52,9 @@
       address: 'Echo Base',
       city: 'Snowy Plains',
       country: 'Hoth',
-      latitude: '10.000000',
-      longitude: '10.000000',
-      price: '199'
+      latitude: '35.6895',
+      longitude: '1139.6917',
+      price: '99'
     )
 
     hoth_l1.photos.attach([
@@ -76,8 +76,8 @@
       address: '5402 Anchorhead Way',
       city: 'Anchorhead',
       country: 'Tatooine',
-      latitude: '20.000000',
-      longitude: '20.000000',
+      latitude: '28.6139',
+      longitude: '77.2090',
       price: '57'
     )
 
@@ -100,9 +100,9 @@
       address: '155 Tide Pools',
       city: 'Kamino City',
       country: 'Kamino',
-      latitude: '10.000000',
-      longitude: '10.000000',
-      price: '99'
+      latitude: '31.2304',
+      longitude: '121.4737',
+      price: '43'
     )
 
     kamino_l3.photos.attach([
@@ -124,9 +124,9 @@
       address: 'Large Pine Tree',
       city: 'Ewok Village',
       country: ' Endor',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '415'
+      latitude: '-23.5505',
+      longitude: '-46.6333',
+      price: '28'
     )
 
     endor_l4.photos.attach([
@@ -148,9 +148,9 @@
       address: '5353 princess lane',
       city: 'Theed',
       country: 'Naboo',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '226'
+      latitude: '52.5200',
+      longitude: '13.4050',
+      price: '91'
     )
 
     naboo_l5.photos.attach([
@@ -172,9 +172,9 @@
       address: '12 Yalarra Road',
       city: 'Kachirho',
       country: 'Kashyyyk',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '177'
+      latitude: '39.9042',
+      longitude: '116.4074',
+      price: '62'
     )
 
     kashyyyk_l6.photos.attach([
@@ -198,9 +198,9 @@
       address: 'Unknown Street',
       city: 'Jedi Temple',
       country: 'Ahch-To',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '55'
+      latitude: '30.0444',
+      longitude: '31.2357',
+      price: '34'
     )
 
     ahch_to_l7.photos.attach([
@@ -222,9 +222,9 @@
       address: '44 Mos Espa Ave',
       city: 'Mos Espa',
       country: 'Trask',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '299'
+      latitude: '23.8103',
+      longitude: '90.4125',
+      price: '58'
     )
 
     trask_l8.photos.attach([
@@ -246,9 +246,9 @@
       address: '1532 Galactic Lane',
       city: 'Galactic City',
       country: 'Coruscant',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '700'
+      latitude: '19.4326',
+      longitude: '-99.1332',
+      price: '70'
     )
 
     coruscant_l9.photos.attach([
@@ -270,8 +270,8 @@
       address: '567 Cloud City Boulevard',
       city: 'Bespin City',
       country: 'Bespin',
-      latitude: '40.000000',
-      longitude: '40.000000',
+      latitude: '48.8566',
+      longitude: '12.3522',
       price: '67'
     )
 
@@ -294,9 +294,9 @@
       address: '789 Swampy Lane',
       city: 'Greenhaven',
       country: 'Dagobah',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '44'
+      latitude: '51.5074',
+      longitude: '-0.1278',
+      price: '91'
     )
 
     bespin_l11.photos.attach([
@@ -318,8 +318,8 @@
       address: '456 Sand Dune Lane',
       city: 'Dusthaven',
       country: 'Jakku',
-      latitude: '40.000000',
-      longitude: '40.000000',
+      latitude: '34.0522',
+      longitude: '-118.2437',
       price: '12'
     )
 
@@ -343,9 +343,9 @@
       address: '789 Lavaflow Street',
       city: 'Ember City',
       country: 'Mustafar',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '12'
+      latitude: '40.7128',
+      longitude: '-74.0060',
+      price: '23'
     )
 
     mustafar_l13.photos.attach([
@@ -368,9 +368,9 @@
       address: '123 Luxe Avenue',
       city: 'Canto Bight',
       country: 'Cantonica',
-      latitude: '40.000000',
-      longitude: '40.000000',
-      price: '12'
+      latitude: '-34.6037',
+      longitude: '-58.3816',
+      price: '84'
     )
 
     cantonica_l14.photos.attach([

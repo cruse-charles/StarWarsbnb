@@ -36,8 +36,8 @@ const Map = () => {
 // debugger
         const markerIcon = {
             url: white, // Replace with the URL of your custom marker icon image
-            scaledSize: new window.google.maps.Size(32, 32), // Adjust the size as needed
-            labelOrigin: new window.google.maps.Point(15, 16), // Adjust the label position within the marker
+            scaledSize: new window.google.maps.Size(36, 32), // Adjust the size as needed
+            labelOrigin: new window.google.maps.Point(15, 15), // Adjust the label position within the marker
         };
 
         markers.current[listing.id] = new window.google.maps.Marker(
