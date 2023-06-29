@@ -41,7 +41,8 @@ time, mark, audio, video {
 }
 
 #listings-map{
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    height: 100%;
 }
 
 #listing-card {

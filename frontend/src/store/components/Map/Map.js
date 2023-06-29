@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect }  from 'react';
 import { fetchListings, getListings } from "../../listings";
 import { useDispatch, useSelector } from "react-redux";
 import testPhoto from '../../../../src/assets/l2p1.png';
+import white from '../../../../src/assets/white.png'
 import './Map.css'
 
 
@@ -27,14 +28,28 @@ const Map = () => {
     )
   }, [])
 
+//   let markerImage = white
+
+
   useEffect(() => {
     listings.forEach((listing) => {
+// debugger
+        const markerIcon = {
+            url: white, // Replace with the URL of your custom marker icon image
+            scaledSize: new window.google.maps.Size(32, 32), // Adjust the size as needed
+            labelOrigin: new window.google.maps.Point(15, 16), // Adjust the label position within the marker
+        };
+
         markers.current[listing.id] = new window.google.maps.Marker(
             {
                 position: {lat: Number(listing.latitude), lng: Number(listing.longitude)},
                 map: map,
                 title: `${listing.title}`,
-                label: `$${listing.price}`,
+                label: {
+                    text: `$${listing.price}`,
+                    fontWeight: 'bold',
+                },
+                icon: markerIcon
             }
         )
 
