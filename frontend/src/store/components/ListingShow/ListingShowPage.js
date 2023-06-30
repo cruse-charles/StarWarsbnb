@@ -41,16 +41,16 @@ const ListingShowPage = () => {
             {/* Photos of listing, commented out portions are kept for testing for website adjustment to not exceed AWS limit */}
             <div id='images-wrapper'>
                 <div id='images-container'>
-                    {/* <img className='main-img'src={listing?.photoUrls?.[0]} alt='listing'/>
+                    <img className='main-img'src={listing?.photoUrls?.[0]} alt='listing'/>
                     <img className='small-img' src={listing?.photoUrls?.[1]} alt='listing'/>
                     <img className='small-img' src={listing?.photoUrls?.[2]} alt='listing'/>
                     <img id='top-right-pic' className='small-img' src={listing?.photoUrls?.[3]} alt='listing'/>
-                    <img id='bottom-right-pic'className='small-img' src={listing?.photoUrls?.[4]} alt='listing'/> */}
-                    <img className='main-img'src={testPhoto} alt='listing'/>
+                    <img id='bottom-right-pic'className='small-img' src={listing?.photoUrls?.[4]} alt='listing'/>
+                    {/* <img className='main-img'src={testPhoto} alt='listing'/>
                     <img className='small-img' src={testPhoto} alt='listing'/>
                     <img className='small-img' src={testPhoto} alt='listing'/>
                     <img id='top-right-pic' className='small-img' src={testPhoto} alt='listing'/>
-                    <img id='bottom-right-pic'className='small-img' src={testPhoto} alt='listing'/>
+                    <img id='bottom-right-pic'className='small-img' src={testPhoto} alt='listing'/> */}
                 </div>
             </div>
 
