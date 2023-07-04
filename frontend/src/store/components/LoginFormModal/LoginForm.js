@@ -10,7 +10,9 @@ function LoginForm({onSubmit}) {
   const [credential, setCredential] = useState(" Username or Email");
   const [password, setPassword] = useState(" Password");
   const [errors, setErrors] = useState([]);
-  const {menuState, setMenuState} = useContext(menuContext);
+  const {menuState, setMenuState} = useState(false)
+
+
 
   //Dispatching input data for login, removing modal, and sending errors if any
   const handleSubmit = (e) => {
@@ -24,7 +26,9 @@ function LoginForm({onSubmit}) {
         try {
           // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
-        } catch {
+          console.log(data)
+        } 
+        catch {
           data = await res.text(); // Will hit this case if the server is down
         }
         if (data?.errors) setErrors(data.errors);

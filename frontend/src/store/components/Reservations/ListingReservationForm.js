@@ -7,6 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { createReservation } from '../../reservations';
 import './Reservation.css'
+//new
+import LoginForm from '../LoginFormModal/LoginForm';
+import { Modal } from '../../../context/Modal';
+//new
 
 let today = new Date(Date.now());
 let day = today.getDate();
@@ -15,7 +19,6 @@ let year = today.getFullYear();
 
 const formattedToday = new Date(year, month, day);
 const formattedYesterday = new Date(year, month, day - 1);
-
 
 
 
@@ -34,6 +37,7 @@ const ListsingReservationForm = () => {
     const [range, setRange] = useState();
     const [errors, setErrors] = useState([]);
     // const [editListingId, setEditListingId] = useState()
+    const [showModal, setShowModal] = useState(false)
 
     //If there is an adjustment in date range selection, re-render page
     useEffect(() => {
@@ -109,8 +113,8 @@ const ListsingReservationForm = () => {
                 let data = await res[0];
                 if (data){
                     setErrors([data]);
-                    // setErrors([data.start_date]);
-                    //double check what seterrors expects as a arg
+                    //setErrors([data.start_date]);
+                    //setErrors argument
                 }
             })
             routeChange();
@@ -132,8 +136,13 @@ const ListsingReservationForm = () => {
                     onSelect={setRange}
                     disabled={disabledDays}
                 />
-                {/* MAKE THE LOGIN MODAL POPUP WHEN SELECTING THE DISABLED BUTTON */}
-                {userId === null ? <button disabled className='disabled-button' id='disabled-reservation-button'>Submit</button> : <button id='reservation-button' onClick={handleSubmit}>Submit</button> }
+                {userId === null ? <button className='disabled-button' id='disabled-reservation-button' onClick={() => setShowModal(true)}>Submit</button> : <button id='reservation-button' onClick={handleSubmit}>Submit</button> }
+
+                { showModal &&(
+                    <Modal onClose={() => setShowModal(false)}>
+                        <LoginForm onSubmit={() => setShowModal(false)}/>
+                    </Modal>
+                )}           
             </div>
         </>
     )

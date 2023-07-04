@@ -10,21 +10,21 @@ import ListsingReservationForm from "../Reservations/ListingReservationForm";
 
 const ListingShowPage = () => {
     const dispatch = useDispatch();
-    const {listingId} = useParams()
+    const {listingId} = useParams();
 
     //This should match with the url wildcard in the APP route, to always receive the correct one
-    const listing = useSelector(getListing(listingId))
-    let user = useSelector((state) => (state.session?.user))
+    const listing = useSelector(getListing(listingId));
+    let user = useSelector((state) => (state.session?.user));
 
 
     useEffect(() => {
-        dispatch(fetchListing(listingId))
-    }, [listingId, dispatch])
+        dispatch(fetchListing(listingId));
+    }, [listingId, dispatch]);
 
     //Should not display if there is no listing in state
     if(!listing) {
         return null;
-    }
+    };
 
     return (
         <>

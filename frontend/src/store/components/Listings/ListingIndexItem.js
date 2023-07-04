@@ -9,6 +9,10 @@ const ListingIndexItem = ({listing, routeChange}) => {
     const [showRightArrow, setShowRightArrow] = useState(true)
     const [activePhotoIndex, setActivePhotoIndex] = useState(0)
 
+    //NEW
+    const [slideDirection, setSlideDirection] = useState('');
+    //NEW
+
     const handleClick = () => {
         if (routeChange) {
             routeChange(listing)
@@ -30,26 +34,66 @@ const ListingIndexItem = ({listing, routeChange}) => {
         }
     }, [activePhotoIndex])
 
+    //OLD
     //Show button and cycle through photos
+    // const handleLeftArrow = () => {
+    //     if (activePhotoIndex > 0) {
+    //         setActivePhotoIndex(activePhotoIndex - 1)
+    //     }
+    // }
+
+    // //Show button and cycle through photos
+    // const handleRightArrow = () => {
+    //     if (activePhotoIndex < listing.photoUrls.length - 1) {
+    //         setActivePhotoIndex(activePhotoIndex + 1)
+    //     }
+    // }
+    // OLD
+
+
+    //NEW
     const handleLeftArrow = () => {
         if (activePhotoIndex > 0) {
-            setActivePhotoIndex(activePhotoIndex - 1)
+          setSlideDirection('slide-out-right');
+          setTimeout(() => {
+            setActivePhotoIndex(activePhotoIndex - 1);
+            setSlideDirection('slide-in-left');
+          }, 100); // Adjust the transition duration as needed
         }
-    }
-
-    //Show button and cycle through photos
-    const handleRightArrow = () => {
+      };
+      
+      const handleRightArrow = () => {
         if (activePhotoIndex < listing.photoUrls.length - 1) {
-            setActivePhotoIndex(activePhotoIndex + 1)
+          setSlideDirection('slide-out-left');
+          setTimeout(() => {
+            setActivePhotoIndex(activePhotoIndex + 1);
+            setSlideDirection('slide-in-right');
+          }, 100); // Adjust the transition duration as needed
         }
-    }
+      };
+
+    //NEW
 
 
     return(
         <div id='listing-card'>
             {/* Test photo to be kept in for site adjustments and not overusing data */}
             {/* <img id='listing-profile-photo'src={testPhoto} alt='listing' onClick={handleClick}/> */}
-            <img id='listing-profile-photo'src={listing?.photoUrls?.[activePhotoIndex]} alt='listing' onClick={handleClick}/>
+            {/* <img id='listing-profile-photo'src={listing?.photoUrls?.[activePhotoIndex]} alt='listing' onClick={handleClick}/> */}
+
+            {/* NEW */}
+
+            {/* <div id='photo-container'> */}
+                <img
+                // key={activePhotoIndex}
+                id='listing-profile-photo'
+                className={`listing-photo ${slideDirection}`}
+                src={listing?.photoUrls?.[activePhotoIndex]}
+                alt="listing"
+                onClick={handleClick}
+            />
+            {/* </div> */}
+            {/* NEW */}
 
             <div id='picture-arrows-container'>
                 {showLeftArrow && (
@@ -78,3 +122,6 @@ const ListingIndexItem = ({listing, routeChange}) => {
 }
 
 export default ListingIndexItem
+
+
+
