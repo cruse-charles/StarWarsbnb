@@ -47,7 +47,7 @@ function ListingsIndex() {
             ) : (
                 <div id='listings-grid'>
                     {listings.map((listing) => {
-                        return <ListingIndexItem listing={listing} key={listing.id} routeChange={routeChange}/>
+                        return <ListingIndexItem listing={listing} key={listing.id} routeChange={routeChange} context='index'/>
                     })}
                 </div>
             )}

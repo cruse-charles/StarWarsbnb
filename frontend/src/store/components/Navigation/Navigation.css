@@ -47,7 +47,7 @@
 
 #hamburger, #account-icon{
     position: relative;
-    top: 7px;
+    top: 25%;
     height: 20px;
     width: 30px;
 }

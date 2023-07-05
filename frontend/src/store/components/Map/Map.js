@@ -34,7 +34,7 @@ const Map = () => {
       new window.google.maps.Map(
         //have to key into the state with refs
         mapRef.current, {
-          center: {lat: 37.7749, lng: -122.4149},
+          center: {lat: 33, lng: -100},
           zoom: 5
         }
       )
@@ -94,28 +94,8 @@ const Map = () => {
                 
                 // Render ListingIndexItem component inside the info window
                 const root = createRoot(content);
-                    root.render(<ListingIndexItem listing={listing} routeChange={routeChange}/>);
+                root.render(<ListingIndexItem listing={listing} routeChange={routeChange} context='map'/>);
 
-
-        
-                //Old method of displaying infoWindow Content
-                //Create each section of information
-                // const photoElement = document.createElement("img")
-                // photoElement.src = testPhoto
-                // photoElement.setAttribute("id","infowindow-listing-profile-photo")
-                // content.appendChild(photoElement)
-        
-                // const cityCountryElement = document.createElement("div")
-                // cityCountryElement.textContent = `${listing.city}, ${listing.country}`
-                // cityCountryElement.setAttribute("id", "infowindow-listing-city-country")
-                // content.appendChild(cityCountryElement)
-    
-                // const priceElement = document.createElement("div")
-                // priceElement.textContent = `$${listing.price} night`
-                // priceElement.setAttribute("id", "infowindow-listing-price")
-                // content.appendChild(priceElement)
-
-        
                 //Attach all information to infoWindow
                 infoWindow.setContent(content)
                 infoWindow.open(map, markers.current[listing.id])

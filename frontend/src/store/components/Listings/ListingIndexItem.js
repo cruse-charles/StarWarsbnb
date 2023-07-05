@@ -3,15 +3,13 @@ import React, { useState, useEffect }  from 'react';
 import testPhoto from '../../../../src/assets/l2p1.png';
 
 
-const ListingIndexItem = ({listing, routeChange}) => {
+const ListingIndexItem = ({listing, routeChange, context}) => {
     const history = useHistory();
     const [showLeftArrow, setShowLeftArrow] = useState(false)
     const [showRightArrow, setShowRightArrow] = useState(true)
     const [activePhotoIndex, setActivePhotoIndex] = useState(0)
-
-    //NEW
     const [slideDirection, setSlideDirection] = useState('');
-    //NEW
+    
 
     const handleClick = () => {
         if (routeChange) {
@@ -34,24 +32,6 @@ const ListingIndexItem = ({listing, routeChange}) => {
         }
     }, [activePhotoIndex])
 
-    //OLD
-    //Show button and cycle through photos
-    // const handleLeftArrow = () => {
-    //     if (activePhotoIndex > 0) {
-    //         setActivePhotoIndex(activePhotoIndex - 1)
-    //     }
-    // }
-
-    // //Show button and cycle through photos
-    // const handleRightArrow = () => {
-    //     if (activePhotoIndex < listing.photoUrls.length - 1) {
-    //         setActivePhotoIndex(activePhotoIndex + 1)
-    //     }
-    // }
-    // OLD
-
-
-    //NEW
     const handleLeftArrow = () => {
         if (activePhotoIndex > 0) {
           setSlideDirection('slide-out-right');
@@ -72,30 +52,21 @@ const ListingIndexItem = ({listing, routeChange}) => {
         }
       };
 
-    //NEW
-
-
     return(
-        <div id='listing-card'>
+        <div id='listing-card' className={context}>
             {/* Test photo to be kept in for site adjustments and not overusing data */}
             {/* <img id='listing-profile-photo'src={testPhoto} alt='listing' onClick={handleClick}/> */}
-            {/* <img id='listing-profile-photo'src={listing?.photoUrls?.[activePhotoIndex]} alt='listing' onClick={handleClick}/> */}
 
-            {/* NEW */}
-
-            {/* <div id='photo-container'> */}
-                <img
+            <img
                 // key={activePhotoIndex}
-                id='listing-profile-photo'
+                id={`${context}-listing-profile-photo`}
                 className={`listing-photo ${slideDirection}`}
                 src={listing?.photoUrls?.[activePhotoIndex]}
                 alt="listing"
                 onClick={handleClick}
             />
-            {/* </div> */}
-            {/* NEW */}
 
-            <div id='picture-arrows-container'>
+            <div id={`${context}-picture-arrows-container`}>
                 {showLeftArrow && (
                     <button id='left-arrow' className='picture-arrows' onClick={handleLeftArrow}>
                         <i className="fa-solid fa-chevron-left"></i>
@@ -110,12 +81,11 @@ const ListingIndexItem = ({listing, routeChange}) => {
 
             </div>
             
-            <div id='listing-card-info-container' onClick={handleClick}>
-                <div id='listing-city-country'>{listing.city}, {listing.country}</div>
-                <div>Hosted by a superhost!</div>
-                <div>Jul 15 - Jul 18</div>
-                <div id='listing-price-line'><span id='listing-price'>${listing.price}</span> night</div>
-
+            <div id={`${context}-listing-card-info-container`} onClick={handleClick}>
+                <div id={`${context}-listing-city-country`}>{listing.city}, {listing.country}</div>
+                <div id={`${context}-hosted-by-line`}>Hosted by a superhost!</div>
+                <div id={`${context}-date-line`}>Aug 15 - Aug 18</div>
+                <div id={`${context}-listing-price-line`}><span id='listing-price'>${listing.price}</span> night</div>
             </div>
         </div>
     )
