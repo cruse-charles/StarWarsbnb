@@ -2,7 +2,7 @@
 
 ## Introduction
 
-StarWarsbnb is a clone of the Airbnb desktop website. Airbnb is a website which allows users to select from a listing of homes to rent for a selected amount of time. A user can create a reservation for a listing, write a rewview, create wishlists, search/filter through listings, and use a map to see listing locations. The sleek and fairly complex logic to create the website led me to to undergo creating this clone. Technologies implemented:
+StarWarsbnb is a clone of the Airbnb desktop website. Airbnb is a website which allows users to select from a listing of homes to rent for a selected amount of time. A user can create a reservation for a listing, write a review, create wishlists, search/filter through listings, and use a map to see listing locations. The sleek and fairly complex logic to create the website led me to to undergo creating this clone. Technologies implemented:
 * Languages: Javascript, Ruby, HTML, CSS
 * Frontend: React-Redux
 * Database: PostgreSQL
