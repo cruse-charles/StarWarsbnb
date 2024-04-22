@@ -33,9 +33,9 @@ function ListingsIndex() {
 
   return (
     <>
+      <Navigation />
       <div id="listings-page-wrapper">
         {/* Navigation bar with links and searchbar */}
-        <Navigation />
 
         {/* Carousel to be added for filtering */}
         {/* <Carousel /> */}

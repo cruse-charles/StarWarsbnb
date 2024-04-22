@@ -1,7 +1,7 @@
-#navigation-wrapper{
+#navigation-wrapper {
     border-bottom: 1px solid lightgray;
     font-family: 'Montserrat', sans-serif;
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: white;
     width: 100%;
@@ -45,7 +45,8 @@
     box-shadow: 0 2px 4px gray;
 }
 
-#hamburger, #account-icon{
+#hamburger,
+#account-icon {
     position: relative;
     top: 25%;
     height: 20px;
@@ -58,7 +59,7 @@
     width: 100px;
 }
 
-#searchbar{
+#searchbar {
     border: none;
     border-radius: 15px;
     font-size: 15px;
@@ -68,7 +69,7 @@
     outline: none;
 }
 
-#searchbar-container{
+#searchbar-container {
     display: flex;
     border: 1px solid lightgray;
     background-color: white;
@@ -82,33 +83,33 @@
     font-weight: bold;
     justify-content: space-around;
 
-    
+
 }
 
-#search-button{
+#search-button {
     border-radius: 100px;
-    background-color:red;
+    background-color: red;
     height: 40px;
     width: 40px;
     border: none;
 }
 
-.fa-magnifying-glass{
-    color:white;
+.fa-magnifying-glass {
+    color: white;
 }
 
 #searchbar-container:hover {
     box-shadow: 0 2px 4px gray;
 }
 
-#profile-button-container{
+#profile-button-container {
     height: 48px;
     width: 80px;
 }
 
 
 
-#profile-dropdown{
+#profile-dropdown {
     font-size: 16px;
     width: 250%;
     position: relative;
@@ -120,23 +121,30 @@
     padding-bottom: 10%;
 }
 
-#login-button, #signup-button, #logout-button, #trips-button{
+#login-button,
+#signup-button,
+#logout-button,
+#trips-button {
     padding-left: 5%;
     padding-top: 4%;
     padding-bottom: 4%;
     background-color: white;
 }
 
-#login-button:hover, #signup-button:hover, #logout-button:hover, #trips-button:hover {
+#login-button:hover,
+#signup-button:hover,
+#logout-button:hover,
+#trips-button:hover {
     background-color: lightgray;
     cursor: pointer;
 }
 
-.icon-container{
+.icon-container {
     cursor: pointer;
 }
 
-#linkedin-logo, #github-logo{
+#linkedin-logo,
+#github-logo {
     height: 30px;
     width: 30p;
     padding-left: 10px;
